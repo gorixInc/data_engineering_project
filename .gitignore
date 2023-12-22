@@ -1,0 +1,4 @@
+arxiv-metadata-full.json
+data/level1/*
+logs/*
+__pycache__
