@@ -62,6 +62,7 @@ def convert_to_csv_func(data_path, output_path):
         os.remove(path)
 
     df = pd.DataFrame(data)
+    df = df.drop(['abstract'], axis=1)
     df.to_csv(f'{output_path}/{uuid.uuid1()}.csv')
 
 process_file_task = PythonOperator(

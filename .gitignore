@@ -2,3 +2,5 @@ arxiv-metadata-full.json
 data/level1/*
 logs/*
 __pycache__
+postgres_data/*
+full_data.csv
