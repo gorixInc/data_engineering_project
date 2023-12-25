@@ -40,7 +40,7 @@ NORM_SUCCESS_FOLDER = '/tmp/data/norm_jsons_processed'
 
 convert_to_csv = DAG(
     dag_id='convert_to_csv', # name of dag
-    schedule_interval='* * * * *', # execute every 10 minutes
+    schedule_interval='*/10 * * * *', # execute every 10 minutes
     start_date=datetime(2022,9,14,9,15,0),
     catchup=False, # in case execution has been paused, should it execute everything in between
     template_searchpath=DATA_FOLDER, # the PostgresOperator will look for files in this folder

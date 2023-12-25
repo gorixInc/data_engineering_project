@@ -1,4 +1,5 @@
 # Use an official Python runtime as a parent image
 FROM apache/airflow:2.7.1
 # Install any eeded packages specified in requirements.txt
-RUN pip install pandas numpy glob2
+COPY requirements.txt ./requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
