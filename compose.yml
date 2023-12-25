@@ -134,6 +134,10 @@ services:
       retries: 5
       start_period: 30s
     restart: always
+    # environment:
+    #   - PYTHONPATH=/opt/airflow/sqlalchemy_orm
+    # volumes:
+    #   - ./sqlalchemy_orm:/opt/airflow/sqlalchemy_orm
     depends_on:
       <<: *airflow-common-depends-on
       airflow-init:
@@ -150,6 +154,10 @@ services:
       retries: 5
       start_period: 30s
     restart: always
+    # environment:
+    #   - PYTHONPATH=/opt/airflow/sqlalchemy_orm
+    # volumes:
+    #   - ./sqlalchemy_orm:/opt/airflow/sqlalchemy_orm
     depends_on:
       <<: *airflow-common-depends-on
       airflow-init:

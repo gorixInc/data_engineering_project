@@ -9,13 +9,30 @@ CREATE TABLE IF NOT EXISTS Journal (
     journal_ref TEXT
 );
 
+CREATE TABLE IF NOT EXISTS Submitter (
+    id SERIAL PRIMARY KEY,
+    first_name TEXT,
+    last_name TEXT,
+    third_name TEXT
+);
+
+CREATE TABLE IF NOT EXISTS License (
+    id SERIAL PRIMARY KEY,
+    name TEXT
+);
+
 CREATE TABLE IF NOT EXISTS Publication (
     id SERIAL PRIMARY KEY,
     title TEXT,
     doi TEXT,
-    arxiv_id TEXT,
-    upload_date DATE,
-    submitter_id INT
+    arxiv_id TEXT,  
+    update_date DATE,
+    comments TEXT,
+    submitter_id INT,
+    license_id INT,
+
+    FOREIGN KEY (submitter_id) REFERENCES Submitter(id),
+    FOREIGN KEY (license_id) REFERENCES License(id)
 );
 
 CREATE TABLE IF NOT EXISTS Journal_specifics (
@@ -30,7 +47,7 @@ CREATE TABLE IF NOT EXISTS Person (
     id SERIAL PRIMARY KEY,
     first_name TEXT,
     last_name TEXT,
-    gender TEXT
+    third_name TEXT
 );
 
 CREATE TABLE IF NOT EXISTS Authorship (
