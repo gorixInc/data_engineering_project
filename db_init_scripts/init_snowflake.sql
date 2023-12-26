@@ -21,6 +21,9 @@ CREATE TABLE IF NOT EXISTS License (
     name TEXT
 );
 
+
+
+
 CREATE TABLE IF NOT EXISTS Publication (
     id SERIAL PRIMARY KEY,
     title TEXT,
@@ -33,6 +36,15 @@ CREATE TABLE IF NOT EXISTS Publication (
 
     FOREIGN KEY (submitter_id) REFERENCES Submitter(id),
     FOREIGN KEY (license_id) REFERENCES License(id)
+);
+
+CREATE TABLE IF NOT EXISTS Version (
+    id SERIAL PRIMARY KEY,
+    publication_id INT,
+    name TEXT,
+    create_date DATE,
+
+    FOREIGN KEY (publication_id) REFERENCES Publication(id)
 );
 
 CREATE TABLE IF NOT EXISTS Journal_specifics (

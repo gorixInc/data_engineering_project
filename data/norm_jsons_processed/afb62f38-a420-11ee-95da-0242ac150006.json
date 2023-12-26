@@ -1,0 +1,4471 @@
+[
+    {
+        "title": "Calculation of prompt diphoton production cross sections at Tevatron and\n  LHC energies",
+        "comments": "37 pages, 15 figures; published version",
+        "journal-ref": "Phys.Rev.D76:013009,2007",
+        "doi": "10.1103/PhysRevD.76.013009",
+        "license": null,
+        "update_date": "2008-11-26",
+        "norm_authors": [
+            {
+                "first_name": "C.",
+                "last_name": "Bal\u00e1zs",
+                "third_name": ""
+            },
+            {
+                "first_name": "E. L.",
+                "last_name": "Berger",
+                "third_name": ""
+            },
+            {
+                "first_name": "P. M.",
+                "last_name": "Nadolsky",
+                "third_name": ""
+            },
+            {
+                "first_name": "C. -P.",
+                "last_name": "Yuan",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "hep-ph",
+                "subcategory_name": null
+            }
+        ],
+        "arxiv_id": "0704.0001",
+        "submitter_norm": {
+            "first_name": "Pavel",
+            "last_name": "Nadolsky",
+            "third_name": null
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-04-02T19:18:42"
+            },
+            {
+                "name": "v2",
+                "create_date": "2007-07-24T20:10:27"
+            }
+        ]
+    },
+    {
+        "title": "Sparsity-certifying Graph Decompositions",
+        "comments": "To appear in Graphs and Combinatorics",
+        "journal-ref": null,
+        "doi": null,
+        "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+        "update_date": "2008-12-13",
+        "norm_authors": [
+            {
+                "first_name": "Ileana",
+                "last_name": "Streinu",
+                "third_name": ""
+            },
+            {
+                "first_name": "Louis",
+                "last_name": "Theran",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "math",
+                "subcategory_name": "CO"
+            },
+            {
+                "category_name": "cs",
+                "subcategory_name": "CG"
+            }
+        ],
+        "arxiv_id": "0704.0002",
+        "submitter_norm": {
+            "first_name": "Louis",
+            "last_name": "Theran",
+            "third_name": null
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-03-31T02:26:18"
+            },
+            {
+                "name": "v2",
+                "create_date": "2008-12-13T17:26:00"
+            }
+        ]
+    },
+    {
+        "title": "The evolution of the Earth-Moon system based on the dark matter field\n  fluid model",
+        "comments": "23 pages, 3 figures",
+        "journal-ref": null,
+        "doi": null,
+        "license": null,
+        "update_date": "2008-01-13",
+        "norm_authors": [
+            {
+                "first_name": "Hongjun",
+                "last_name": "Pan",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "physics",
+                "subcategory_name": "gen-ph"
+            }
+        ],
+        "arxiv_id": "0704.0003",
+        "submitter_norm": {
+            "first_name": "Hongjun",
+            "last_name": "Pan",
+            "third_name": null
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-04-01T20:46:54"
+            },
+            {
+                "name": "v2",
+                "create_date": "2007-12-08T23:47:24"
+            },
+            {
+                "name": "v3",
+                "create_date": "2008-01-13T00:36:28"
+            }
+        ]
+    },
+    {
+        "title": "A determinant of Stirling cycle numbers counts unlabeled acyclic\n  single-source automata",
+        "comments": "11 pages",
+        "journal-ref": null,
+        "doi": null,
+        "license": null,
+        "update_date": "2007-05-23",
+        "norm_authors": [
+            {
+                "first_name": "David",
+                "last_name": "Callan",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "math",
+                "subcategory_name": "CO"
+            }
+        ],
+        "arxiv_id": "0704.0004",
+        "submitter_norm": {
+            "first_name": "David",
+            "last_name": "Callan",
+            "third_name": null
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-03-31T03:16:14"
+            }
+        ]
+    },
+    {
+        "title": "From dyadic $\\Lambda_{\\alpha}$ to $\\Lambda_{\\alpha}$",
+        "comments": null,
+        "journal-ref": "Illinois J. Math. 52 (2008) no.2, 681-689",
+        "doi": null,
+        "license": null,
+        "update_date": "2013-10-15",
+        "norm_authors": [
+            {
+                "first_name": "Wael",
+                "last_name": "Abu-Shammala",
+                "third_name": ""
+            },
+            {
+                "first_name": "Alberto",
+                "last_name": "Torchinsky",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "math",
+                "subcategory_name": "CA"
+            },
+            {
+                "category_name": "math",
+                "subcategory_name": "FA"
+            }
+        ],
+        "arxiv_id": "0704.0005",
+        "submitter_norm": {
+            "first_name": "Alberto",
+            "last_name": "Torchinsky",
+            "third_name": null
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-04-02T18:09:58"
+            }
+        ]
+    },
+    {
+        "title": "Bosonic characters of atomic Cooper pairs across resonance",
+        "comments": "6 pages, 4 figures, accepted by PRA",
+        "journal-ref": null,
+        "doi": "10.1103/PhysRevA.75.043613",
+        "license": null,
+        "update_date": "2015-05-13",
+        "norm_authors": [
+            {
+                "first_name": "Y. H.",
+                "last_name": "Pong",
+                "third_name": ""
+            },
+            {
+                "first_name": "C. K.",
+                "last_name": "Law",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "cond-mat",
+                "subcategory_name": "mes-hall"
+            }
+        ],
+        "arxiv_id": "0704.0006",
+        "submitter_norm": {
+            "first_name": "Yue",
+            "last_name": "Hin",
+            "third_name": "Pong"
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-03-31T04:24:59"
+            }
+        ]
+    },
+    {
+        "title": "Polymer Quantum Mechanics and its Continuum Limit",
+        "comments": "16 pages, no figures. Typos corrected to match published version",
+        "journal-ref": "Phys.Rev.D76:044016,2007",
+        "doi": "10.1103/PhysRevD.76.044016",
+        "license": null,
+        "update_date": "2008-11-26",
+        "norm_authors": [
+            {
+                "first_name": "Alejandro",
+                "last_name": "Corichi",
+                "third_name": ""
+            },
+            {
+                "first_name": "Tatjana",
+                "last_name": "Vukasinac",
+                "third_name": ""
+            },
+            {
+                "first_name": "Jose A.",
+                "last_name": "Zapata",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "gr-qc",
+                "subcategory_name": null
+            }
+        ],
+        "arxiv_id": "0704.0007",
+        "submitter_norm": {
+            "first_name": "Alejandro",
+            "last_name": "Corichi",
+            "third_name": null
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-03-31T04:27:22"
+            },
+            {
+                "name": "v2",
+                "create_date": "2007-08-22T22:42:11"
+            }
+        ]
+    },
+    {
+        "title": "Numerical solution of shock and ramp compression for general material\n  properties",
+        "comments": "Minor corrections",
+        "journal-ref": "Journal of Applied Physics, vol 104, 073536 (2008)",
+        "doi": "10.1063/1.2975338",
+        "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+        "update_date": "2009-02-05",
+        "norm_authors": [
+            {
+                "first_name": "Damian C.",
+                "last_name": "Swift",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "cond-mat",
+                "subcategory_name": "mtrl-sci"
+            }
+        ],
+        "arxiv_id": "0704.0008",
+        "submitter_norm": {
+            "first_name": "Damian",
+            "last_name": "Swift",
+            "third_name": null
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-03-31T04:47:20"
+            },
+            {
+                "name": "v2",
+                "create_date": "2008-04-10T08:42:28"
+            },
+            {
+                "name": "v3",
+                "create_date": "2008-07-01T18:54:28"
+            }
+        ]
+    },
+    {
+        "title": "The Spitzer c2d Survey of Large, Nearby, Insterstellar Clouds. IX. The\n  Serpens YSO Population As Observed With IRAC and MIPS",
+        "comments": null,
+        "journal-ref": "Astrophys.J.663:1149-1173,2007",
+        "doi": "10.1086/518646",
+        "license": null,
+        "update_date": "2010-03-18",
+        "norm_authors": [
+            {
+                "first_name": "Paul",
+                "last_name": "Harvey",
+                "third_name": ""
+            },
+            {
+                "first_name": "Bruno",
+                "last_name": "Merin",
+                "third_name": ""
+            },
+            {
+                "first_name": "Tracy L.",
+                "last_name": "Huard",
+                "third_name": ""
+            },
+            {
+                "first_name": "Luisa M.",
+                "last_name": "Rebull",
+                "third_name": ""
+            },
+            {
+                "first_name": "Nicholas",
+                "last_name": "Chapman",
+                "third_name": ""
+            },
+            {
+                "first_name": "Neal J.",
+                "last_name": "Evans",
+                "third_name": "II"
+            },
+            {
+                "first_name": "Philip C.",
+                "last_name": "Myers",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "astro-ph",
+                "subcategory_name": null
+            }
+        ],
+        "arxiv_id": "0704.0009",
+        "submitter_norm": {
+            "first_name": "Paul",
+            "last_name": "Harvey",
+            "third_name": null
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-04-02T19:41:34"
+            }
+        ]
+    },
+    {
+        "title": "Partial cubes: structures, characterizations, and constructions",
+        "comments": "36 pages, 17 figures",
+        "journal-ref": null,
+        "doi": null,
+        "license": null,
+        "update_date": "2007-05-23",
+        "norm_authors": [
+            {
+                "first_name": "Sergei",
+                "last_name": "Ovchinnikov",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "math",
+                "subcategory_name": "CO"
+            }
+        ],
+        "arxiv_id": "0704.0010",
+        "submitter_norm": {
+            "first_name": "Sergei",
+            "last_name": "Ovchinnikov",
+            "third_name": null
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-03-31T05:10:16"
+            }
+        ]
+    },
+    {
+        "title": "Computing genus 2 Hilbert-Siegel modular forms over $\\Q(\\sqrt{5})$ via\n  the Jacquet-Langlands correspondence",
+        "comments": "14 pages; title changed; to appear in Experimental Mathematics",
+        "journal-ref": null,
+        "doi": null,
+        "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+        "update_date": "2008-08-20",
+        "norm_authors": [
+            {
+                "first_name": "Clifton",
+                "last_name": "Cunningham",
+                "third_name": ""
+            },
+            {
+                "first_name": "Lassina",
+                "last_name": "Dembele",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "math",
+                "subcategory_name": "NT"
+            },
+            {
+                "category_name": "math",
+                "subcategory_name": "AG"
+            }
+        ],
+        "arxiv_id": "0704.0011",
+        "submitter_norm": {
+            "first_name": "Clifton",
+            "last_name": "Cunningham",
+            "third_name": null
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-03-31T05:32:49"
+            },
+            {
+                "name": "v2",
+                "create_date": "2008-08-19T04:46:47"
+            },
+            {
+                "name": "v3",
+                "create_date": "2008-08-20T13:15:09"
+            }
+        ]
+    },
+    {
+        "title": "Distribution of integral Fourier Coefficients of a Modular Form of Half\n  Integral Weight Modulo Primes",
+        "comments": null,
+        "journal-ref": null,
+        "doi": null,
+        "license": null,
+        "update_date": "2007-05-23",
+        "norm_authors": [
+            {
+                "first_name": "Dohoon",
+                "last_name": "Choi",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "math",
+                "subcategory_name": "NT"
+            }
+        ],
+        "arxiv_id": "0704.0012",
+        "submitter_norm": {
+            "first_name": "Dohoon",
+            "last_name": "Choi",
+            "third_name": null
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-03-31T05:48:51"
+            }
+        ]
+    },
+    {
+        "title": "$p$-adic Limit of Weakly Holomorphic Modular Forms of Half Integral\n  Weight",
+        "comments": null,
+        "journal-ref": null,
+        "doi": null,
+        "license": null,
+        "update_date": "2008-05-26",
+        "norm_authors": [
+            {
+                "first_name": "Dohoon",
+                "last_name": "Choi",
+                "third_name": ""
+            },
+            {
+                "first_name": "YoungJu",
+                "last_name": "Choie",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "math",
+                "subcategory_name": "NT"
+            }
+        ],
+        "arxiv_id": "0704.0013",
+        "submitter_norm": {
+            "first_name": "Dohoon",
+            "last_name": "Choi",
+            "third_name": null
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-03-31T06:21:49"
+            },
+            {
+                "name": "v2",
+                "create_date": "2008-05-26T03:31:52"
+            }
+        ]
+    },
+    {
+        "title": "Iterated integral and the loop product",
+        "comments": "18 pages, 1 figure",
+        "journal-ref": null,
+        "doi": null,
+        "license": null,
+        "update_date": "2009-09-29",
+        "norm_authors": [
+            {
+                "first_name": "Koichi",
+                "last_name": "Fujii",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "math",
+                "subcategory_name": "CA"
+            },
+            {
+                "category_name": "math",
+                "subcategory_name": "AT"
+            }
+        ],
+        "arxiv_id": "0704.0014",
+        "submitter_norm": {
+            "first_name": "Koichi",
+            "last_name": "Fujii",
+            "third_name": null
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-04-01T12:04:13"
+            }
+        ]
+    },
+    {
+        "title": "Fermionic superstring loop amplitudes in the pure spinor formalism",
+        "comments": "22 pages; signs and coefficients adjusted for anticommuting\n  superfields, section 4.3 changed accordingly, reference added",
+        "journal-ref": "JHEP 0705:034,2007",
+        "doi": "10.1088/1126-6708/2007/05/034",
+        "license": null,
+        "update_date": "2009-11-13",
+        "norm_authors": [
+            {
+                "first_name": "Christian",
+                "last_name": "Stahn",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "hep-th",
+                "subcategory_name": null
+            }
+        ],
+        "arxiv_id": "0704.0015",
+        "submitter_norm": {
+            "first_name": "Christian",
+            "last_name": "Stahn",
+            "third_name": null
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-04-02T18:10:09"
+            },
+            {
+                "name": "v2",
+                "create_date": "2008-03-10T04:18:38"
+            }
+        ]
+    },
+    {
+        "title": "Lifetime of doubly charmed baryons",
+        "comments": "17 pages, 3 figures and 1 table",
+        "journal-ref": "Commun.Theor.Phys.49:993-1000,2008",
+        "doi": "10.1088/0253-6102/49/4/38",
+        "license": null,
+        "update_date": "2008-12-18",
+        "norm_authors": [
+            {
+                "first_name": "Chao-Hsi",
+                "last_name": "Chang",
+                "third_name": ""
+            },
+            {
+                "first_name": "Tong",
+                "last_name": "Li",
+                "third_name": ""
+            },
+            {
+                "first_name": "Xue-Qian",
+                "last_name": "Li",
+                "third_name": ""
+            },
+            {
+                "first_name": "Yu-Ming",
+                "last_name": "Wang",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "hep-ph",
+                "subcategory_name": null
+            }
+        ],
+        "arxiv_id": "0704.0016",
+        "submitter_norm": {
+            "first_name": "Li",
+            "last_name": "Tong",
+            "third_name": null
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-03-31T07:04:26"
+            }
+        ]
+    },
+    {
+        "title": "Spectroscopic Observations of the Intermediate Polar EX Hydrae in\n  Quiescence",
+        "comments": "10 pages, 11 figures (figures 3, 4, 7 and 8 at reduced resolution,\n  originals available on request). Accepted for publication in Monthly Notices\n  of the Royal Astronomical Society",
+        "journal-ref": "Mon.Not.Roy.Astron.Soc.378:211-220,2007",
+        "doi": "10.1111/j.1365-2966.2007.11762.x",
+        "license": null,
+        "update_date": "2009-06-23",
+        "norm_authors": [
+            {
+                "first_name": "Nceba",
+                "last_name": "Mhlahlo",
+                "third_name": ""
+            },
+            {
+                "first_name": "David H.",
+                "last_name": "Buckley",
+                "third_name": ""
+            },
+            {
+                "first_name": "Vikram S.",
+                "last_name": "Dhillon",
+                "third_name": ""
+            },
+            {
+                "first_name": "Steven B.",
+                "last_name": "Potter",
+                "third_name": ""
+            },
+            {
+                "first_name": "Brian",
+                "last_name": "Warner",
+                "third_name": ""
+            },
+            {
+                "first_name": "Patric A.",
+                "last_name": "Woudt",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "astro-ph",
+                "subcategory_name": null
+            }
+        ],
+        "arxiv_id": "0704.0017",
+        "submitter_norm": {
+            "first_name": "Nceba",
+            "last_name": "Mhlahlo",
+            "third_name": null
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-03-31T07:38:48"
+            }
+        ]
+    },
+    {
+        "title": "In quest of a generalized Callias index theorem",
+        "comments": "20 pages, v2: an overall sign and typos corrected",
+        "journal-ref": null,
+        "doi": null,
+        "license": null,
+        "update_date": "2007-05-23",
+        "norm_authors": [
+            {
+                "first_name": "Andreas",
+                "last_name": "Gustavsson",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "hep-th",
+                "subcategory_name": null
+            }
+        ],
+        "arxiv_id": "0704.0018",
+        "submitter_norm": {
+            "first_name": "Andreas",
+            "last_name": "Gustavsson",
+            "third_name": null
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-04-02T08:58:27"
+            },
+            {
+                "name": "v2",
+                "create_date": "2007-04-21T17:16:20"
+            }
+        ]
+    },
+    {
+        "title": "Approximation for extinction probability of the contact process based on\n  the Gr\\\"obner basis",
+        "comments": "6 pages, Journal-ref added",
+        "journal-ref": "RIMS Kokyuroku, No.1551, pp.57-62 (2007)",
+        "doi": null,
+        "license": null,
+        "update_date": "2007-06-23",
+        "norm_authors": [
+            {
+                "first_name": "Norio",
+                "last_name": "Konno",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "math",
+                "subcategory_name": "PR"
+            },
+            {
+                "category_name": "math",
+                "subcategory_name": "AG"
+            }
+        ],
+        "arxiv_id": "0704.0019",
+        "submitter_norm": {
+            "first_name": "Norio",
+            "last_name": "Konno",
+            "third_name": null
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-03-31T08:12:35"
+            },
+            {
+                "name": "v2",
+                "create_date": "2007-06-23T19:58:14"
+            }
+        ]
+    },
+    {
+        "title": "Measurement of the Hadronic Form Factor in D0 --> K- e+ nue Decays",
+        "comments": "21 pages, 13 postscript figures, submitted to Phys. Rev. D,\n  contributed to 42nd Rencontres de Moriond: QCD and Hadronic Interactions",
+        "journal-ref": "Phys.Rev.D76:052005,2007",
+        "doi": "10.1103/PhysRevD.76.052005",
+        "license": null,
+        "update_date": "2015-06-30",
+        "norm_authors": [
+            {
+                "first_name": "",
+                "last_name": "The BABAR Collaboration",
+                "third_name": ""
+            },
+            {
+                "first_name": "B.",
+                "last_name": "Aubert",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "hep-ex",
+                "subcategory_name": null
+            }
+        ],
+        "arxiv_id": "0704.0020",
+        "submitter_norm": {
+            "first_name": "Patrick",
+            "last_name": "Roudeau",
+            "third_name": null
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-03-31T09:49:10"
+            }
+        ]
+    },
+    {
+        "title": "Molecular Synchronization Waves in Arrays of Allosterically Regulated\n  Enzymes",
+        "comments": "5 pages, 4 figures",
+        "journal-ref": "Phys. Rev. Lett. 99, 048301 (2007)",
+        "doi": "10.1103/PhysRevLett.99.048301",
+        "license": null,
+        "update_date": "2007-07-24",
+        "norm_authors": [
+            {
+                "first_name": "Vanessa",
+                "last_name": "Casagrande",
+                "third_name": ""
+            },
+            {
+                "first_name": "Yuichi",
+                "last_name": "Togashi",
+                "third_name": ""
+            },
+            {
+                "first_name": "Alexander S.",
+                "last_name": "Mikhailov",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "nlin",
+                "subcategory_name": "PS"
+            },
+            {
+                "category_name": "physics",
+                "subcategory_name": "chem-ph"
+            },
+            {
+                "category_name": "q-bio",
+                "subcategory_name": "MN"
+            }
+        ],
+        "arxiv_id": "0704.0021",
+        "submitter_norm": {
+            "first_name": "Yuichi",
+            "last_name": "Togashi",
+            "third_name": null
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-03-31T12:57:59"
+            },
+            {
+                "name": "v2",
+                "create_date": "2007-07-24T04:01:20"
+            }
+        ]
+    },
+    {
+        "title": "Stochastic Lie group integrators",
+        "comments": "20 pages, 4 figures",
+        "journal-ref": null,
+        "doi": null,
+        "license": null,
+        "update_date": "2007-10-16",
+        "norm_authors": [
+            {
+                "first_name": "Simon J. A.",
+                "last_name": "Malham",
+                "third_name": ""
+            },
+            {
+                "first_name": "Anke",
+                "last_name": "Wiese",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "math",
+                "subcategory_name": "NA"
+            }
+        ],
+        "arxiv_id": "0704.0022",
+        "submitter_norm": {
+            "first_name": "Simon",
+            "last_name": "Malham",
+            "third_name": null
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-03-31T11:05:53"
+            },
+            {
+                "name": "v2",
+                "create_date": "2007-10-16T10:30:55"
+            }
+        ]
+    },
+    {
+        "title": "ALMA as the ideal probe of the solar chromosphere",
+        "comments": "4 pages, 2 figures, to appear in the proceedings of the conference\n  Science with ALMA: a new era for Astrophysics, Spain, 2006",
+        "journal-ref": "Astrophys.Space Sci.313:197-200,2008",
+        "doi": "10.1007/s10509-007-9626-1",
+        "license": null,
+        "update_date": "2009-06-23",
+        "norm_authors": [
+            {
+                "first_name": "M. A.",
+                "last_name": "Loukitcheva",
+                "third_name": ""
+            },
+            {
+                "first_name": "S. K.",
+                "last_name": "Solanki",
+                "third_name": ""
+            },
+            {
+                "first_name": "S.",
+                "last_name": "White",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "astro-ph",
+                "subcategory_name": null
+            }
+        ],
+        "arxiv_id": "0704.0023",
+        "submitter_norm": {
+            "first_name": "Maria",
+            "last_name": "Loukitcheva",
+            "third_name": null
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-03-31T11:42:13"
+            }
+        ]
+    },
+    {
+        "title": "Formation of quasi-solitons in transverse confined ferromagnetic film\n  media",
+        "comments": "First appeared in Prof. B. Hillebrands' research group Annual Report\n  2005 (http://www.physik.uni-kl.de/w_hilleb/ann05.html); also presented at\n  Intermag'2006 Conference: M. Kostylev, A.A. Serga, and B. Hillebrands,\n  Digests of International Magnetic Conference, May 8-12, 2006, San Diego, USA,\n  FV03 (2006)",
+        "journal-ref": null,
+        "doi": null,
+        "license": null,
+        "update_date": "2007-05-30",
+        "norm_authors": [
+            {
+                "first_name": "A. A.",
+                "last_name": "Serga",
+                "third_name": ""
+            },
+            {
+                "first_name": "M.",
+                "last_name": "Kostylev",
+                "third_name": ""
+            },
+            {
+                "first_name": "B.",
+                "last_name": "Hillebrands",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "nlin",
+                "subcategory_name": "PS"
+            }
+        ],
+        "arxiv_id": "0704.0024",
+        "submitter_norm": {
+            "first_name": "Mikhail",
+            "last_name": "Kostylev",
+            "third_name": null
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-03-31T11:44:22"
+            }
+        ]
+    },
+    {
+        "title": "Spectroscopic Properties of Polarons in Strongly Correlated Systems by\n  Exact Diagrammatic Monte Carlo Method",
+        "comments": "41 pages, 13 figures, in \"Polarons in Advanced Materials\" ed. A. S.\n  Alexandrov (Canopus/Springer Publishing, Bristol (2007)), pp. 503-544.",
+        "journal-ref": null,
+        "doi": "10.1007/978-1-4020-6348-0_12",
+        "license": null,
+        "update_date": "2015-05-13",
+        "norm_authors": [
+            {
+                "first_name": "A. S.",
+                "last_name": "Mishchenko",
+                "third_name": ""
+            },
+            {
+                "first_name": "N.",
+                "last_name": "Nagaosa",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "cond-mat",
+                "subcategory_name": "str-el"
+            },
+            {
+                "category_name": "cond-mat",
+                "subcategory_name": "stat-mech"
+            }
+        ],
+        "arxiv_id": "0704.0025",
+        "submitter_norm": {
+            "first_name": "Andrei",
+            "last_name": "Mishchenko",
+            "third_name": "S"
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-04-02T12:02:36"
+            }
+        ]
+    },
+    {
+        "title": "Placeholder Substructures II: Meta-Fractals, Made of Box-Kites, Fill\n  Infinite-Dimensional Skies",
+        "comments": "31 pp. Second of 3-part \"theorem/proof\" exposition of 78-slide\n  Powerpoint from Wolfram Science's NKS 2006, available at\n  http://wolframscience.com/conference/2006/presentations/materials/demarrais.ppt\n  [v2: small fixes][v3: Added new Appendix B and small number of corrections\n  (pp. 7, 14, 20) RE: 2nd type of box-kite flow pattern.]",
+        "journal-ref": null,
+        "doi": null,
+        "license": null,
+        "update_date": "2007-11-22",
+        "norm_authors": [
+            {
+                "first_name": "Robert P. C.",
+                "last_name": "de Marrais",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "math",
+                "subcategory_name": "RA"
+            }
+        ],
+        "arxiv_id": "0704.0026",
+        "submitter_norm": {
+            "first_name": "Robert",
+            "last_name": "P.",
+            "third_name": "C."
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-03-31T12:24:06"
+            },
+            {
+                "name": "v2",
+                "create_date": "2007-04-08T14:07:19"
+            },
+            {
+                "name": "v3",
+                "create_date": "2007-11-22T01:13:37"
+            }
+        ]
+    },
+    {
+        "title": "Filling-Factor-Dependent Magnetophonon Resonance in Graphene",
+        "comments": "4 pages, 2 figures; mistakes due to an erroneous electron-phonon\n  coupling constant have been corrected; mode splitting is larger than\n  originally expected",
+        "journal-ref": "Phys. Rev. Lett. 99, 087402 (2007)",
+        "doi": "10.1103/PhysRevLett.99.087402",
+        "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+        "update_date": "2009-09-24",
+        "norm_authors": [
+            {
+                "first_name": "M. O.",
+                "last_name": "Goerbig",
+                "third_name": ""
+            },
+            {
+                "first_name": "J. -N.",
+                "last_name": "Fuchs",
+                "third_name": ""
+            },
+            {
+                "first_name": "K.",
+                "last_name": "Kechedzhi",
+                "third_name": ""
+            },
+            {
+                "first_name": "Vladimir I.",
+                "last_name": "Fal'ko",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "cond-mat",
+                "subcategory_name": "mes-hall"
+            }
+        ],
+        "arxiv_id": "0704.0027",
+        "submitter_norm": {
+            "first_name": "M.",
+            "last_name": "O.",
+            "third_name": "Goerbig"
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-04-02T19:17:14"
+            },
+            {
+                "name": "v2",
+                "create_date": "2007-04-09T16:48:39"
+            },
+            {
+                "name": "v3",
+                "create_date": "2007-08-28T13:21:50"
+            },
+            {
+                "name": "v4",
+                "create_date": "2009-09-24T12:40:18"
+            }
+        ]
+    },
+    {
+        "title": "Pfaffians, hafnians and products of real linear functionals",
+        "comments": "10 pages",
+        "journal-ref": "Math. Res. Lett. 15 (2008), no. 2, 351--358",
+        "doi": null,
+        "license": null,
+        "update_date": "2014-07-31",
+        "norm_authors": [
+            {
+                "first_name": "P\u00e9ter E.",
+                "last_name": "Frenkel",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "math",
+                "subcategory_name": "CA"
+            },
+            {
+                "category_name": "math",
+                "subcategory_name": "PR"
+            }
+        ],
+        "arxiv_id": "0704.0028",
+        "submitter_norm": {
+            "first_name": "P\\'eter",
+            "last_name": "E.",
+            "third_name": "Frenkel"
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-04-02T15:36:29"
+            },
+            {
+                "name": "v2",
+                "create_date": "2008-02-26T14:40:04"
+            }
+        ]
+    },
+    {
+        "title": "Understanding the Flavor Symmetry Breaking and Nucleon Flavor-Spin\n  Structure within Chiral Quark Model",
+        "comments": null,
+        "journal-ref": "Phys.Rev.D75:094018,2007",
+        "doi": "10.1103/PhysRevD.75.094018",
+        "license": null,
+        "update_date": "2010-04-23",
+        "norm_authors": [
+            {
+                "first_name": "Zhan",
+                "last_name": "Shu",
+                "third_name": ""
+            },
+            {
+                "first_name": "Xiao-Lin",
+                "last_name": "Chen",
+                "third_name": ""
+            },
+            {
+                "first_name": "Wei-Zhen",
+                "last_name": "Deng",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "hep-ph",
+                "subcategory_name": null
+            }
+        ],
+        "arxiv_id": "0704.0029",
+        "submitter_norm": {
+            "first_name": "Weizhen",
+            "last_name": "Deng",
+            "third_name": null
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-03-31T14:10:06"
+            },
+            {
+                "name": "v2",
+                "create_date": "2007-04-26T08:27:20"
+            }
+        ]
+    },
+    {
+        "title": "Tuning correlation effects with electron-phonon interactions",
+        "comments": "Reprint to improve access. 13 pages, 6 figures.",
+        "journal-ref": "J. Low. Temp. Phys. Vol. 140 pp77-89 (2005)",
+        "doi": "10.1007/s10909-005-6013-6",
+        "license": null,
+        "update_date": "2015-05-13",
+        "norm_authors": [
+            {
+                "first_name": "J. P.",
+                "last_name": "Hague",
+                "third_name": ""
+            },
+            {
+                "first_name": "N.",
+                "last_name": "d'Ambrumenil",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "cond-mat",
+                "subcategory_name": "str-el"
+            }
+        ],
+        "arxiv_id": "0704.0030",
+        "submitter_norm": {
+            "first_name": "Jim",
+            "last_name": "Hague",
+            "third_name": null
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-03-31T14:14:18"
+            }
+        ]
+    },
+    {
+        "title": "Crystal channeling of LHC forward protons with preserved distribution in\n  phase space",
+        "comments": "11 pages, 3 figures",
+        "journal-ref": "Phys.Lett.B658:7-12,2007",
+        "doi": "10.1016/j.physletb.2007.10.051",
+        "license": null,
+        "update_date": "2008-11-26",
+        "norm_authors": [
+            {
+                "first_name": "V. M.",
+                "last_name": "Biryukov",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "hep-ph",
+                "subcategory_name": null
+            }
+        ],
+        "arxiv_id": "0704.0031",
+        "submitter_norm": {
+            "first_name": "Valery",
+            "last_name": "M.",
+            "third_name": "Biryukov"
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-03-31T14:14:46"
+            }
+        ]
+    },
+    {
+        "title": "Probing non-standard neutrino interactions with supernova neutrinos",
+        "comments": "21 pages, 12 figures, 17 postscript files",
+        "journal-ref": "Phys.Rev.D76:053001,2007",
+        "doi": "10.1103/PhysRevD.76.053001",
+        "license": null,
+        "update_date": "2008-11-26",
+        "norm_authors": [
+            {
+                "first_name": "A.",
+                "last_name": "Esteban-Pretel",
+                "third_name": ""
+            },
+            {
+                "first_name": "R.",
+                "last_name": "Tom\u00e0s",
+                "third_name": ""
+            },
+            {
+                "first_name": "J. W. F.",
+                "last_name": "Valle",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "hep-ph",
+                "subcategory_name": null
+            }
+        ],
+        "arxiv_id": "0704.0032",
+        "submitter_norm": {
+            "first_name": "Andreu",
+            "last_name": "Esteban-Pretel",
+            "third_name": null
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-04-02T18:35:33"
+            }
+        ]
+    },
+    {
+        "title": "Convergence of the discrete dipole approximation. I. Theoretical\n  analysis",
+        "comments": "23 pages, 5 figures; added several corrections according to the\n  published erratum except for Eq.(6) (it was correct in the original paper)\n  and with additional correction in Eq.(96)\n  [$\\bar{\\mathbf{G}}(...)\\mathbf{P}_i^s -\\bar{\\mathbf{G}}^s(...)\\mathbf{P}_i^p$\n  instead of $(\\bar{\\mathbf{G}}(...) - \\bar{\\mathbf{G}}^s(...))\\mathbf{P}_i^s$]",
+        "journal-ref": "J.Opt.Soc.Am.A 23, 2578-2591 (2006); Erratum: J.Opt.Soc.Am.A 32,\n  2407-2408 (2015)",
+        "doi": "10.1364/JOSAA.23.002578 10.1364/JOSAA.32.002407",
+        "license": "http://creativecommons.org/licenses/by-nc-nd/4.0/",
+        "update_date": "2022-03-31",
+        "norm_authors": [
+            {
+                "first_name": "Maxim A.",
+                "last_name": "Yurkin",
+                "third_name": ""
+            },
+            {
+                "first_name": "Valeri P.",
+                "last_name": "Maltsev",
+                "third_name": ""
+            },
+            {
+                "first_name": "Alfons G.",
+                "last_name": "Hoekstra",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "physics",
+                "subcategory_name": "optics"
+            },
+            {
+                "category_name": "physics",
+                "subcategory_name": "comp-ph"
+            }
+        ],
+        "arxiv_id": "0704.0033",
+        "submitter_norm": {
+            "first_name": "Maxim",
+            "last_name": "A.",
+            "third_name": "Yurkin"
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-03-31T15:34:25"
+            },
+            {
+                "name": "v2",
+                "create_date": "2022-03-29T18:21:31"
+            }
+        ]
+    },
+    {
+        "title": "Origin of adaptive mutants: a quantum measurement?",
+        "comments": "5 pages",
+        "journal-ref": null,
+        "doi": null,
+        "license": null,
+        "update_date": "2007-05-23",
+        "norm_authors": [
+            {
+                "first_name": "Vasily",
+                "last_name": "Ogryzko",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "q-bio",
+                "subcategory_name": "PE"
+            },
+            {
+                "category_name": "q-bio",
+                "subcategory_name": "CB"
+            },
+            {
+                "category_name": "q-bio.PE q-bio.CB quant-ph",
+                "subcategory_name": null
+            }
+        ],
+        "arxiv_id": "0704.0034",
+        "submitter_norm": {
+            "first_name": "Vasily",
+            "last_name": "Ogryzko",
+            "third_name": "V"
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-03-31T15:36:48"
+            }
+        ]
+    },
+    {
+        "title": "Convergence of the discrete dipole approximation. II. An extrapolation\n  technique to increase the accuracy",
+        "comments": "17 pages, 8 figures",
+        "journal-ref": "J.Opt.Soc.Am.A 23(10): 2592-2601 (2006)",
+        "doi": "10.1364/JOSAA.23.002592",
+        "license": null,
+        "update_date": "2008-07-29",
+        "norm_authors": [
+            {
+                "first_name": "Maxim A.",
+                "last_name": "Yurkin",
+                "third_name": ""
+            },
+            {
+                "first_name": "Valeri P.",
+                "last_name": "Maltsev",
+                "third_name": ""
+            },
+            {
+                "first_name": "Alfons G.",
+                "last_name": "Hoekstra",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "physics",
+                "subcategory_name": "optics"
+            },
+            {
+                "category_name": "physics",
+                "subcategory_name": "comp-ph"
+            }
+        ],
+        "arxiv_id": "0704.0035",
+        "submitter_norm": {
+            "first_name": "Maxim",
+            "last_name": "A.",
+            "third_name": "Yurkin"
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-03-31T15:52:56"
+            }
+        ]
+    },
+    {
+        "title": "A remark on the number of steady states in a multiple futile cycle",
+        "comments": "Resubmit with new results on the upper bound of the number of steady\n  states. 20 pages, 2 figures, See\n  http://www.math.rutgers.edu/~sontag/PUBDIR/index.html for online preprints\n  and reprints of related work",
+        "journal-ref": null,
+        "doi": null,
+        "license": null,
+        "update_date": "2011-11-09",
+        "norm_authors": [
+            {
+                "first_name": "Liming",
+                "last_name": "Wang",
+                "third_name": ""
+            },
+            {
+                "first_name": "Eduardo D.",
+                "last_name": "Sontag",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "q-bio",
+                "subcategory_name": "QM"
+            },
+            {
+                "category_name": "q-bio",
+                "subcategory_name": "MN"
+            }
+        ],
+        "arxiv_id": "0704.0036",
+        "submitter_norm": {
+            "first_name": "Eduardo",
+            "last_name": "D.",
+            "third_name": "Sontag"
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-03-31T15:55:50"
+            },
+            {
+                "name": "v2",
+                "create_date": "2007-07-20T01:25:10"
+            }
+        ]
+    },
+    {
+        "title": "The discrete dipole approximation for simulation of light scattering by\n  particles much larger than the wavelength",
+        "comments": "13 pages, 10 figures",
+        "journal-ref": "J.Quant.Spectrosc.Radiat.Transf. 106, 546-557 (2007)",
+        "doi": "10.1016/j.jqsrt.2007.01.033",
+        "license": null,
+        "update_date": "2007-05-23",
+        "norm_authors": [
+            {
+                "first_name": "Maxim A.",
+                "last_name": "Yurkin",
+                "third_name": ""
+            },
+            {
+                "first_name": "Valeri P.",
+                "last_name": "Maltsev",
+                "third_name": ""
+            },
+            {
+                "first_name": "Alfons G.",
+                "last_name": "Hoekstra",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "physics",
+                "subcategory_name": "optics"
+            },
+            {
+                "category_name": "physics",
+                "subcategory_name": "comp-ph"
+            }
+        ],
+        "arxiv_id": "0704.0037",
+        "submitter_norm": {
+            "first_name": "Maxim",
+            "last_name": "A.",
+            "third_name": "Yurkin"
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-03-31T16:06:05"
+            }
+        ]
+    },
+    {
+        "title": "The discrete dipole approximation: an overview and recent developments",
+        "comments": "36 pages, 1 figure; added several corrections according to the\n  published erratum except for Eq.(5) (it was correct in the original paper)",
+        "journal-ref": "J.Quant.Spectrosc.Radiat.Transf. 106, 558-589 (2007); Erratum:\n  J.Quant.Spectrosc.Radiat.Transf. 171, 82-83 (2016)",
+        "doi": "10.1016/j.jqsrt.2007.01.034 10.1016/j.jqsrt.2015.11.025",
+        "license": "http://creativecommons.org/licenses/by-nc-nd/4.0/",
+        "update_date": "2022-03-30",
+        "norm_authors": [
+            {
+                "first_name": "Maxim A.",
+                "last_name": "Yurkin",
+                "third_name": ""
+            },
+            {
+                "first_name": "Alfons G.",
+                "last_name": "Hoekstra",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "physics",
+                "subcategory_name": "optics"
+            },
+            {
+                "category_name": "physics",
+                "subcategory_name": "comp-ph"
+            }
+        ],
+        "arxiv_id": "0704.0038",
+        "submitter_norm": {
+            "first_name": "Maxim",
+            "last_name": "A.",
+            "third_name": "Yurkin"
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-03-31T16:25:01"
+            },
+            {
+                "name": "v2",
+                "create_date": "2022-03-29T17:39:15"
+            }
+        ]
+    },
+    {
+        "title": "Scalar radius of the pion and zeros in the form factor",
+        "comments": "18 pages, 3 figures. Some rewriting in the presentation of the\n  results and comments to previous works",
+        "journal-ref": "Phys.Lett.B651:139-146,2007",
+        "doi": "10.1016/j.physletb.2007.06.023",
+        "license": null,
+        "update_date": "2008-11-26",
+        "norm_authors": [
+            {
+                "first_name": "Jose A.",
+                "last_name": "Oller",
+                "third_name": ""
+            },
+            {
+                "first_name": "Luis",
+                "last_name": "Roca",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "hep-ph hep-lat nucl-th",
+                "subcategory_name": null
+            },
+            {
+                "category_name": "hep-ph hep-lat nucl-th",
+                "subcategory_name": null
+            },
+            {
+                "category_name": "hep-ph hep-lat nucl-th",
+                "subcategory_name": null
+            }
+        ],
+        "arxiv_id": "0704.0039",
+        "submitter_norm": {
+            "first_name": "Jose",
+            "last_name": "Antonio",
+            "third_name": "Oller"
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-03-31T17:06:06"
+            },
+            {
+                "name": "v2",
+                "create_date": "2007-04-25T11:14:41"
+            }
+        ]
+    },
+    {
+        "title": "Multilinear function series in conditionally free probability with\n  amalgamation",
+        "comments": "Final version, published",
+        "journal-ref": null,
+        "doi": null,
+        "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+        "update_date": "2008-09-05",
+        "norm_authors": [
+            {
+                "first_name": "Mihai",
+                "last_name": "Popa",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "math",
+                "subcategory_name": "OA"
+            },
+            {
+                "category_name": "math",
+                "subcategory_name": "FA"
+            }
+        ],
+        "arxiv_id": "0704.0040",
+        "submitter_norm": {
+            "first_name": "Mihai",
+            "last_name": "Popa",
+            "third_name": null
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-03-31T17:05:04"
+            },
+            {
+                "name": "v2",
+                "create_date": "2007-04-18T23:00:25"
+            },
+            {
+                "name": "v3",
+                "create_date": "2008-09-05T03:11:45"
+            }
+        ]
+    },
+    {
+        "title": "Quantum Group of Isometries in Classical and Noncommutative Geometry",
+        "comments": "improvements: (i) more general approach through quantum families of\n  isometries, following Woronowicz and Soltan's ideas; (ii) construction of\n  equivaraint spectral triples. also some minor changes. Improved and enlarged\n  version of ICTP preprint IC/2007/017",
+        "journal-ref": null,
+        "doi": "10.1007/s00220-008-0461-1",
+        "license": null,
+        "update_date": "2009-11-13",
+        "norm_authors": [
+            {
+                "first_name": "Debashish",
+                "last_name": "Goswami",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "math",
+                "subcategory_name": "QA"
+            },
+            {
+                "category_name": "math.QA math-ph math.MP",
+                "subcategory_name": null
+            },
+            {
+                "category_name": "math",
+                "subcategory_name": "MP"
+            }
+        ],
+        "arxiv_id": "0704.0041",
+        "submitter_norm": {
+            "first_name": "Debashish",
+            "last_name": "Goswami",
+            "third_name": null
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-03-31T21:04:54"
+            },
+            {
+                "name": "v2",
+                "create_date": "2007-04-10T00:09:57"
+            },
+            {
+                "name": "v3",
+                "create_date": "2007-07-23T19:24:43"
+            },
+            {
+                "name": "v4",
+                "create_date": "2007-10-26T06:15:33"
+            }
+        ]
+    },
+    {
+        "title": "General System theory, Like-Quantum Semantics and Fuzzy Sets",
+        "comments": "12 pages,3 figures",
+        "journal-ref": null,
+        "doi": null,
+        "license": null,
+        "update_date": "2010-04-26",
+        "norm_authors": [
+            {
+                "first_name": "Ignazio",
+                "last_name": "Licata",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "physics",
+                "subcategory_name": "gen-ph"
+            },
+            {
+                "category_name": "physics.gen-ph quant-ph",
+                "subcategory_name": null
+            }
+        ],
+        "arxiv_id": "0704.0042",
+        "submitter_norm": {
+            "first_name": "Ignazio",
+            "last_name": "Licata",
+            "third_name": null
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-03-31T17:28:35"
+            }
+        ]
+    },
+    {
+        "title": "Nonequilibrium entropy limiters in lattice Boltzmann methods",
+        "comments": "30 pages, 9 figures, 1 table",
+        "journal-ref": "Physica A, V. 387, Issues 2-3 (2008), Pages 385-406",
+        "doi": "10.1016/j.physa.2007.09.031",
+        "license": null,
+        "update_date": "2007-11-19",
+        "norm_authors": [
+            {
+                "first_name": "R. A.",
+                "last_name": "Brownlee",
+                "third_name": ""
+            },
+            {
+                "first_name": "A. N.",
+                "last_name": "Gorban",
+                "third_name": ""
+            },
+            {
+                "first_name": "J.",
+                "last_name": "Levesley",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "cond-mat",
+                "subcategory_name": "stat-mech"
+            },
+            {
+                "category_name": "cond-mat",
+                "subcategory_name": "mtrl-sci"
+            }
+        ],
+        "arxiv_id": "0704.0043",
+        "submitter_norm": {
+            "first_name": "Alexander",
+            "last_name": "Gorban",
+            "third_name": null
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-03-31T17:31:12"
+            }
+        ]
+    },
+    {
+        "title": "Astrophysical gyrokinetics: kinetic and fluid turbulent cascades in\n  magnetized weakly collisional plasmas",
+        "comments": "aastex using emulateapj, 65 pages, 10 figures; replaced to match\n  published version",
+        "journal-ref": "ApJS 182, 310 (2009)",
+        "doi": "10.1088/0067-0049/182/1/310",
+        "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+        "update_date": "2015-05-13",
+        "norm_authors": [
+            {
+                "first_name": "A. A.",
+                "last_name": "Schekochihin",
+                "third_name": ""
+            },
+            {
+                "first_name": "S. C.",
+                "last_name": "Cowley",
+                "third_name": ""
+            },
+            {
+                "first_name": "W.",
+                "last_name": "Dorland",
+                "third_name": ""
+            },
+            {
+                "first_name": "G. W.",
+                "last_name": "Hammett",
+                "third_name": ""
+            },
+            {
+                "first_name": "G. G.",
+                "last_name": "Howes",
+                "third_name": ""
+            },
+            {
+                "first_name": "E.",
+                "last_name": "Quataert",
+                "third_name": ""
+            },
+            {
+                "first_name": "T.",
+                "last_name": "Tatsuno",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "astro-ph nlin.CD physics.plasm-ph physics.space-ph",
+                "subcategory_name": null
+            },
+            {
+                "category_name": "nlin",
+                "subcategory_name": "CD"
+            },
+            {
+                "category_name": "physics",
+                "subcategory_name": "plasm-ph"
+            },
+            {
+                "category_name": "physics",
+                "subcategory_name": "space-ph"
+            }
+        ],
+        "arxiv_id": "0704.0044",
+        "submitter_norm": {
+            "first_name": "Alexander",
+            "last_name": "Schekochihin",
+            "third_name": null
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-03-31T17:47:54"
+            },
+            {
+                "name": "v2",
+                "create_date": "2008-05-24T19:38:45"
+            },
+            {
+                "name": "v3",
+                "create_date": "2009-01-24T19:05:36"
+            },
+            {
+                "name": "v4",
+                "create_date": "2009-05-09T19:26:10"
+            }
+        ]
+    },
+    {
+        "title": "Evolution of solitary waves and undular bores in shallow-water flows\n  over a gradual slope with bottom friction",
+        "comments": "accepted for publication in J. Fluid Mech.",
+        "journal-ref": "J. Fluid Mech. 585, 213-244 (2007)",
+        "doi": "10.1017/S0022112007006817",
+        "license": null,
+        "update_date": "2007-09-23",
+        "norm_authors": [
+            {
+                "first_name": "G. A.",
+                "last_name": "El",
+                "third_name": ""
+            },
+            {
+                "first_name": "R. H. J.",
+                "last_name": "Grimshaw",
+                "third_name": ""
+            },
+            {
+                "first_name": "A. M.",
+                "last_name": "Kamchatnov",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "nlin",
+                "subcategory_name": "PS"
+            },
+            {
+                "category_name": "nlin",
+                "subcategory_name": "SI"
+            }
+        ],
+        "arxiv_id": "0704.0045",
+        "submitter_norm": {
+            "first_name": "A.",
+            "last_name": "M.",
+            "third_name": "Kamchatnov"
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-03-31T18:09:02"
+            }
+        ]
+    },
+    {
+        "title": "A limit relation for entropy and channel capacity per unit cost",
+        "comments": "LATEX file, 11 pages",
+        "journal-ref": "J. Math. Phys. 48(2007), 092102.",
+        "doi": "10.1063/1.2779138",
+        "license": null,
+        "update_date": "2009-11-13",
+        "norm_authors": [
+            {
+                "first_name": "I.",
+                "last_name": "Csiszar",
+                "third_name": ""
+            },
+            {
+                "first_name": "F.",
+                "last_name": "Hiai",
+                "third_name": ""
+            },
+            {
+                "first_name": "D.",
+                "last_name": "Petz",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "quant-ph cs.IT math.IT",
+                "subcategory_name": null
+            },
+            {
+                "category_name": "cs",
+                "subcategory_name": "IT"
+            },
+            {
+                "category_name": "math",
+                "subcategory_name": "IT"
+            }
+        ],
+        "arxiv_id": "0704.0046",
+        "submitter_norm": {
+            "first_name": "Denes",
+            "last_name": "Petz",
+            "third_name": null
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-04-01T16:37:36"
+            }
+        ]
+    },
+    {
+        "title": "Intelligent location of simultaneously active acoustic emission sources:\n  Part I",
+        "comments": "5 pages, 5 eps figures, uses IEEEtran.cls",
+        "journal-ref": null,
+        "doi": null,
+        "license": null,
+        "update_date": "2009-09-29",
+        "norm_authors": [
+            {
+                "first_name": "T.",
+                "last_name": "Kosel",
+                "third_name": ""
+            },
+            {
+                "first_name": "I.",
+                "last_name": "Grabec",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "cs",
+                "subcategory_name": "NE"
+            },
+            {
+                "category_name": "cs",
+                "subcategory_name": "AI"
+            }
+        ],
+        "arxiv_id": "0704.0047",
+        "submitter_norm": {
+            "first_name": "Igor",
+            "last_name": "Grabec",
+            "third_name": null
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-04-01T13:06:50"
+            }
+        ]
+    },
+    {
+        "title": "Inference on white dwarf binary systems using the first round Mock LISA\n  Data Challenges data sets",
+        "comments": "GWDAW-11 proceeding, submitted to CQG, 10 pages, 3 figures, 1 table;\n  revised values in table",
+        "journal-ref": "Class.Quant.Grav.24:S541-S550,2007",
+        "doi": "10.1088/0264-9381/24/19/S17",
+        "license": null,
+        "update_date": "2008-11-26",
+        "norm_authors": [
+            {
+                "first_name": "Alexander",
+                "last_name": "Stroeer",
+                "third_name": ""
+            },
+            {
+                "first_name": "John",
+                "last_name": "Veitch",
+                "third_name": ""
+            },
+            {
+                "first_name": "Christian",
+                "last_name": "Roever",
+                "third_name": ""
+            },
+            {
+                "first_name": "Ed",
+                "last_name": "Bloomer",
+                "third_name": ""
+            },
+            {
+                "first_name": "James",
+                "last_name": "Clark",
+                "third_name": ""
+            },
+            {
+                "first_name": "Nelson",
+                "last_name": "Christensen",
+                "third_name": ""
+            },
+            {
+                "first_name": "Martin",
+                "last_name": "Hendry",
+                "third_name": ""
+            },
+            {
+                "first_name": "Chris",
+                "last_name": "Messenger",
+                "third_name": ""
+            },
+            {
+                "first_name": "Renate",
+                "last_name": "Meyer",
+                "third_name": ""
+            },
+            {
+                "first_name": "Matthew",
+                "last_name": "Pitkin",
+                "third_name": ""
+            },
+            {
+                "first_name": "Jennifer",
+                "last_name": "Toher",
+                "third_name": ""
+            },
+            {
+                "first_name": "Richard",
+                "last_name": "Umstaetter",
+                "third_name": ""
+            },
+            {
+                "first_name": "Alberto",
+                "last_name": "Vecchio",
+                "third_name": ""
+            },
+            {
+                "first_name": "Graham",
+                "last_name": "Woan",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "gr-qc astro-ph",
+                "subcategory_name": null
+            },
+            {
+                "category_name": "gr-qc astro-ph",
+                "subcategory_name": null
+            }
+        ],
+        "arxiv_id": "0704.0048",
+        "submitter_norm": {
+            "first_name": "Alexander",
+            "last_name": "Stroeer",
+            "third_name": null
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-03-31T19:17:47"
+            },
+            {
+                "name": "v2",
+                "create_date": "2007-04-03T22:26:37"
+            }
+        ]
+    },
+    {
+        "title": "An algorithm for the classification of smooth Fano polytopes",
+        "comments": "17 pages.",
+        "journal-ref": null,
+        "doi": null,
+        "license": null,
+        "update_date": "2007-05-23",
+        "norm_authors": [
+            {
+                "first_name": "Mikkel",
+                "last_name": "\u00d8bro",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "math",
+                "subcategory_name": "CO"
+            }
+        ],
+        "arxiv_id": "0704.0049",
+        "submitter_norm": {
+            "first_name": "Mikkel",
+            "last_name": "{\\O}bro",
+            "third_name": null
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-04-02T09:23:25"
+            }
+        ]
+    },
+    {
+        "title": "Intelligent location of simultaneously active acoustic emission sources:\n  Part II",
+        "comments": "5 pages, 7 eps figures, uses IEEEtran.cls",
+        "journal-ref": null,
+        "doi": null,
+        "license": null,
+        "update_date": "2007-05-23",
+        "norm_authors": [
+            {
+                "first_name": "T.",
+                "last_name": "Kosel",
+                "third_name": ""
+            },
+            {
+                "first_name": "I.",
+                "last_name": "Grabec",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "cs",
+                "subcategory_name": "NE"
+            },
+            {
+                "category_name": "cs",
+                "subcategory_name": "AI"
+            }
+        ],
+        "arxiv_id": "0704.0050",
+        "submitter_norm": {
+            "first_name": "Igor",
+            "last_name": "Grabec",
+            "third_name": null
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-04-01T18:53:13"
+            }
+        ]
+    },
+    {
+        "title": "Visualizing Teleportation",
+        "comments": "This is a \"teaching\" article aimed at making teleportation\n  understandable to undergraduate physics majors (and possibly others). Version\n  2 has previous appendix moved to early sections, and more clearly states aim\n  is to present a way physicists can explain teleportation to non-scientists",
+        "journal-ref": null,
+        "doi": null,
+        "license": null,
+        "update_date": "2008-05-14",
+        "norm_authors": [
+            {
+                "first_name": "Scott M.",
+                "last_name": "Cohen",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "physics",
+                "subcategory_name": "ed-ph"
+            },
+            {
+                "category_name": "physics.ed-ph quant-ph",
+                "subcategory_name": null
+            }
+        ],
+        "arxiv_id": "0704.0051",
+        "submitter_norm": {
+            "first_name": "Scott",
+            "last_name": "M.",
+            "third_name": "Cohen"
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-04-02T18:17:41"
+            },
+            {
+                "name": "v2",
+                "create_date": "2008-05-13T23:16:22"
+            }
+        ]
+    },
+    {
+        "title": "Quantum Field Theory on Curved Backgrounds. II. Spacetime Symmetries",
+        "comments": "18 pages, 1 figure",
+        "journal-ref": null,
+        "doi": null,
+        "license": null,
+        "update_date": "2007-05-23",
+        "norm_authors": [
+            {
+                "first_name": "Arthur",
+                "last_name": "Jaffe",
+                "third_name": ""
+            },
+            {
+                "first_name": "Gordon",
+                "last_name": "Ritter",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "hep-th",
+                "subcategory_name": null
+            }
+        ],
+        "arxiv_id": "0704.0052",
+        "submitter_norm": {
+            "first_name": "William",
+            "last_name": "Gordon",
+            "third_name": "Ritter"
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-03-31T20:07:39"
+            }
+        ]
+    },
+    {
+        "title": "A Global Approach to the Theory of Special Finsler Manifolds",
+        "comments": "32 pages, LaTeX file, Abstract and Introduction modified. Journal-ref\n  removed (it was entered by mistake)",
+        "journal-ref": "J. Math. Kyoto Univ., 48 (2008), 857-893.",
+        "doi": null,
+        "license": null,
+        "update_date": "2009-04-20",
+        "norm_authors": [
+            {
+                "first_name": "Nabil L.",
+                "last_name": "Youssef",
+                "third_name": ""
+            },
+            {
+                "first_name": "S. H.",
+                "last_name": "Abed",
+                "third_name": ""
+            },
+            {
+                "first_name": "A.",
+                "last_name": "Soleiman",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "math",
+                "subcategory_name": "DG"
+            },
+            {
+                "category_name": "math.DG gr-qc",
+                "subcategory_name": null
+            }
+        ],
+        "arxiv_id": "0704.0053",
+        "submitter_norm": {
+            "first_name": "Nabil",
+            "last_name": "Youssef",
+            "third_name": "L"
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-03-31T20:14:41"
+            },
+            {
+                "name": "v2",
+                "create_date": "2007-04-08T09:36:13"
+            },
+            {
+                "name": "v3",
+                "create_date": "2007-09-06T22:11:34"
+            }
+        ]
+    },
+    {
+        "title": "The Hardy-Lorentz Spaces $H^{p,q}(R^n)$",
+        "comments": null,
+        "journal-ref": "Studia Math. 182 (2007) no. 3, 283-294",
+        "doi": null,
+        "license": null,
+        "update_date": "2013-10-15",
+        "norm_authors": [
+            {
+                "first_name": "Wael",
+                "last_name": "Abu-Shammala",
+                "third_name": ""
+            },
+            {
+                "first_name": "Alberto",
+                "last_name": "Torchinsky",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "math",
+                "subcategory_name": "CA"
+            },
+            {
+                "category_name": "math",
+                "subcategory_name": "FA"
+            }
+        ],
+        "arxiv_id": "0704.0054",
+        "submitter_norm": {
+            "first_name": "Alberto",
+            "last_name": "Torchinsky",
+            "third_name": null
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-04-02T18:14:21"
+            }
+        ]
+    },
+    {
+        "title": "Potassium intercalation in graphite: A van der Waals density-functional\n  study",
+        "comments": "10 pages, 5 figures",
+        "journal-ref": null,
+        "doi": "10.1103/PhysRevB.76.155425",
+        "license": null,
+        "update_date": "2009-11-13",
+        "norm_authors": [
+            {
+                "first_name": "Eleni",
+                "last_name": "Ziambaras",
+                "third_name": ""
+            },
+            {
+                "first_name": "Jesper",
+                "last_name": "Kleis",
+                "third_name": ""
+            },
+            {
+                "first_name": "Elsebeth",
+                "last_name": "Schroder",
+                "third_name": ""
+            },
+            {
+                "first_name": "Per",
+                "last_name": "Hyldgaard",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "cond-mat",
+                "subcategory_name": "soft"
+            },
+            {
+                "category_name": "cond-mat",
+                "subcategory_name": "mtrl-sci"
+            }
+        ],
+        "arxiv_id": "0704.0055",
+        "submitter_norm": {
+            "first_name": "Per",
+            "last_name": "Hyldgaard",
+            "third_name": null
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-04-01T20:46:31"
+            }
+        ]
+    },
+    {
+        "title": "Phase diagram of Gaussian-core nematics",
+        "comments": "15 pages, 1 table, 10 figures, submitted on J. Chem. Phys.",
+        "journal-ref": "J. Chem. Phys. 126, 194902 (2007)",
+        "doi": "10.1063/1.2737041",
+        "license": null,
+        "update_date": "2009-11-13",
+        "norm_authors": [
+            {
+                "first_name": "Santi",
+                "last_name": "Prestipino",
+                "third_name": ""
+            },
+            {
+                "first_name": "Franz",
+                "last_name": "Saija",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "cond-mat",
+                "subcategory_name": "soft"
+            },
+            {
+                "category_name": "cond-mat",
+                "subcategory_name": "mtrl-sci"
+            }
+        ],
+        "arxiv_id": "0704.0056",
+        "submitter_norm": {
+            "first_name": "Franz",
+            "last_name": "Saija",
+            "third_name": null
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-03-31T21:51:45"
+            }
+        ]
+    },
+    {
+        "title": "High-spin to low-spin and orbital polarization transitions in\n  multiorbital Mott systems",
+        "comments": "Published version",
+        "journal-ref": "Phys. Rev. Lett. 99, 126405 (2007)",
+        "doi": "10.1103/PhysRevLett.99.126405",
+        "license": null,
+        "update_date": "2009-11-13",
+        "norm_authors": [
+            {
+                "first_name": "Philipp",
+                "last_name": "Werner",
+                "third_name": ""
+            },
+            {
+                "first_name": "Andrew J.",
+                "last_name": "Millis",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "cond-mat",
+                "subcategory_name": "str-el"
+            }
+        ],
+        "arxiv_id": "0704.0057",
+        "submitter_norm": {
+            "first_name": "Philipp",
+            "last_name": "Werner",
+            "third_name": null
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-04-01T19:58:35"
+            },
+            {
+                "name": "v2",
+                "create_date": "2007-09-19T18:33:51"
+            }
+        ]
+    },
+    {
+        "title": "Intelligent Life in Cosmology",
+        "comments": null,
+        "journal-ref": "International Journal of Astrobiology 2 (2003) 141-148",
+        "doi": "10.1017/S1473550403001526",
+        "license": null,
+        "update_date": "2015-05-13",
+        "norm_authors": [
+            {
+                "first_name": "Frank J.",
+                "last_name": "Tipler",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "physics",
+                "subcategory_name": "pop-ph"
+            }
+        ],
+        "arxiv_id": "0704.0058",
+        "submitter_norm": {
+            "first_name": "Frank",
+            "last_name": "Tipler",
+            "third_name": null
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-03-31T21:59:26"
+            }
+        ]
+    },
+    {
+        "title": "The Mass and Radius of the Unseen M-Dwarf Companion in the Single-Lined\n  Eclipsing Binary HAT-TR-205-013",
+        "comments": "18 pages, 9 tables and 6 figures; accepted by ApJ. Added a reference\n  and corrected a typo",
+        "journal-ref": "Astrophys.J.663:573-582,2007",
+        "doi": "10.1086/518413",
+        "license": null,
+        "update_date": "2009-06-23",
+        "norm_authors": [
+            {
+                "first_name": "T. G.",
+                "last_name": "Beatty",
+                "third_name": ""
+            },
+            {
+                "first_name": "J. M.",
+                "last_name": "Fernandez",
+                "third_name": ""
+            },
+            {
+                "first_name": "D. W.",
+                "last_name": "Latham",
+                "third_name": ""
+            },
+            {
+                "first_name": "G. A.",
+                "last_name": "Bakos",
+                "third_name": ""
+            },
+            {
+                "first_name": "G.",
+                "last_name": "Kovacs",
+                "third_name": ""
+            },
+            {
+                "first_name": "R. W.",
+                "last_name": "Noyes",
+                "third_name": ""
+            },
+            {
+                "first_name": "R. P.",
+                "last_name": "Stefanik",
+                "third_name": ""
+            },
+            {
+                "first_name": "G.",
+                "last_name": "Torres",
+                "third_name": ""
+            },
+            {
+                "first_name": "M. E.",
+                "last_name": "Everett",
+                "third_name": ""
+            },
+            {
+                "first_name": "C. W.",
+                "last_name": "Hergenrother",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "astro-ph",
+                "subcategory_name": null
+            }
+        ],
+        "arxiv_id": "0704.0059",
+        "submitter_norm": {
+            "first_name": "Thomas",
+            "last_name": "Beatty",
+            "third_name": null
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-03-31T22:16:50"
+            },
+            {
+                "name": "v2",
+                "create_date": "2007-04-09T15:50:24"
+            }
+        ]
+    },
+    {
+        "title": "Coulomb excitation of unstable nuclei at intermediate energies",
+        "comments": "12 pages, 2 figures, accepted for publication in Phys. Lett. B",
+        "journal-ref": "Phys.Lett.B650:233-238,2007",
+        "doi": "10.1016/j.physletb.2007.05.029",
+        "license": null,
+        "update_date": "2008-11-26",
+        "norm_authors": [
+            {
+                "first_name": "C. A.",
+                "last_name": "Bertulani",
+                "third_name": ""
+            },
+            {
+                "first_name": "G.",
+                "last_name": "Cardella",
+                "third_name": ""
+            },
+            {
+                "first_name": "M.",
+                "last_name": "De Napoli",
+                "third_name": ""
+            },
+            {
+                "first_name": "G.",
+                "last_name": "Raciti",
+                "third_name": ""
+            },
+            {
+                "first_name": "E.",
+                "last_name": "Rapisarda",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "nucl-th",
+                "subcategory_name": null
+            }
+        ],
+        "arxiv_id": "0704.0060",
+        "submitter_norm": {
+            "first_name": "Carlos",
+            "last_name": "Bertulani",
+            "third_name": null
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-03-31T22:24:53"
+            },
+            {
+                "name": "v2",
+                "create_date": "2007-05-21T16:23:27"
+            }
+        ]
+    },
+    {
+        "title": "Intersection Bodies and Generalized Cosine Transforms",
+        "comments": "38 pages",
+        "journal-ref": null,
+        "doi": null,
+        "license": null,
+        "update_date": "2007-05-23",
+        "norm_authors": [
+            {
+                "first_name": "Boris",
+                "last_name": "Rubin",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "math",
+                "subcategory_name": "FA"
+            }
+        ],
+        "arxiv_id": "0704.0061",
+        "submitter_norm": {
+            "first_name": "Boris",
+            "last_name": "Rubin",
+            "third_name": null
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-03-31T22:45:05"
+            },
+            {
+                "name": "v2",
+                "create_date": "2007-05-03T18:03:34"
+            }
+        ]
+    },
+    {
+        "title": "On-line Viterbi Algorithm and Its Relationship to Random Walks",
+        "comments": null,
+        "journal-ref": "Algorithms in Bioinformatics: 7th International Workshop (WABI),\n  4645 volume of Lecture Notes in Computer Science, pp. 240-251, Philadelphia,\n  PA, USA, September 2007. Springer",
+        "doi": "10.1007/978-3-540-74126-8_23",
+        "license": null,
+        "update_date": "2010-01-25",
+        "norm_authors": [
+            {
+                "first_name": "Rastislav",
+                "last_name": "\u0160r\u00e1mek",
+                "third_name": ""
+            },
+            {
+                "first_name": "Bro\u0148a",
+                "last_name": "Brejov\u00e1",
+                "third_name": ""
+            },
+            {
+                "first_name": "Tom\u00e1\u0161",
+                "last_name": "Vina\u0159",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "cs",
+                "subcategory_name": "DS"
+            }
+        ],
+        "arxiv_id": "0704.0062",
+        "submitter_norm": {
+            "first_name": "Tom\\'a\\v{s}",
+            "last_name": "Vina\\v{r}",
+            "third_name": null
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-03-31T23:52:33"
+            }
+        ]
+    },
+    {
+        "title": "Experimental efforts in search of 76Ge Neutrinoless Double Beta Decay",
+        "comments": null,
+        "journal-ref": null,
+        "doi": null,
+        "license": null,
+        "update_date": "2008-03-12",
+        "norm_authors": [
+            {
+                "first_name": "Somnath",
+                "last_name": "Choudhury",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "hep-ph",
+                "subcategory_name": null
+            }
+        ],
+        "arxiv_id": "0704.0063",
+        "submitter_norm": {
+            "first_name": "Somnath",
+            "last_name": "Choudhury",
+            "third_name": null
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-04-01T00:15:54"
+            },
+            {
+                "name": "v2",
+                "create_date": "2007-04-03T23:51:30"
+            },
+            {
+                "name": "v3",
+                "create_date": "2007-04-27T17:42:41"
+            },
+            {
+                "name": "v4",
+                "create_date": "2008-03-12T16:14:26"
+            }
+        ]
+    },
+    {
+        "title": "Nilpotent symmetry invariance in the superfield formulation: the\n  (non-)Abelian 1-form gauge theories",
+        "comments": "LaTeX file, 19 pages, journal reference",
+        "journal-ref": "Int.J.Mod.Phys.A23:3685-3705,2008",
+        "doi": "10.1142/S0217751X08041591",
+        "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+        "update_date": "2008-11-26",
+        "norm_authors": [
+            {
+                "first_name": "R. P.",
+                "last_name": "Malik",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "hep-th",
+                "subcategory_name": null
+            }
+        ],
+        "arxiv_id": "0704.0064",
+        "submitter_norm": {
+            "first_name": "Rudra",
+            "last_name": "Prakash",
+            "third_name": "Malik"
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-04-01T13:32:15"
+            },
+            {
+                "name": "v2",
+                "create_date": "2007-05-03T16:35:49"
+            },
+            {
+                "name": "v3",
+                "create_date": "2007-12-06T13:31:19"
+            },
+            {
+                "name": "v4",
+                "create_date": "2008-06-05T11:21:43"
+            },
+            {
+                "name": "v5",
+                "create_date": "2008-10-24T12:23:58"
+            }
+        ]
+    },
+    {
+        "title": "Littlewood-Richardson polynomials",
+        "comments": "21 pages, reference to independent work of V. Kreiman was added",
+        "journal-ref": "J. Algebra 321 (2009), 3450-3468.",
+        "doi": null,
+        "license": null,
+        "update_date": "2009-06-03",
+        "norm_authors": [
+            {
+                "first_name": "A. I.",
+                "last_name": "Molev",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "math",
+                "subcategory_name": "AG"
+            },
+            {
+                "category_name": "math",
+                "subcategory_name": "CO"
+            }
+        ],
+        "arxiv_id": "0704.0065",
+        "submitter_norm": {
+            "first_name": "Alexander",
+            "last_name": "Molev",
+            "third_name": null
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-04-02T01:14:48"
+            },
+            {
+                "name": "v2",
+                "create_date": "2007-04-16T11:41:24"
+            },
+            {
+                "name": "v3",
+                "create_date": "2007-07-16T10:40:52"
+            }
+        ]
+    },
+    {
+        "title": "Lagrangian quantum field theory in momentum picture. IV. Commutation\n  relations for free fields",
+        "comments": "60 LaTeX pages. The packages AMS-LaTeX and amsfonts are required.\n  This paper is a continuation of the e-print E-prints No. hep-th/0402006, No.\n  hep-th/0405008 and No. hep-th/0505007. For related papers, visit the\n  \"publication\" pages at http://theo.inrne.bas.bg/~bozho/",
+        "journal-ref": null,
+        "doi": null,
+        "license": null,
+        "update_date": "2007-05-23",
+        "norm_authors": [
+            {
+                "first_name": "Bozhidar Z.",
+                "last_name": "Iliev",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "hep-th",
+                "subcategory_name": null
+            }
+        ],
+        "arxiv_id": "0704.0066",
+        "submitter_norm": {
+            "first_name": "Bozhidar",
+            "last_name": "Zakhariev",
+            "third_name": "Iliev"
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-04-01T06:22:38"
+            }
+        ]
+    },
+    {
+        "title": "Order of Epitaxial Self-Assembled Quantum Dots: Linear Analysis",
+        "comments": null,
+        "journal-ref": "L. H. Friedman. Order of epitaxial self-assembled quantum dots:\n  Linear analysis. Journal of Nanophotonics, 1(1):013513, 2007.",
+        "doi": "10.1117/1.2753144",
+        "license": null,
+        "update_date": "2007-06-09",
+        "norm_authors": [
+            {
+                "first_name": "Lawrence H.",
+                "last_name": "Friedman",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "cond-mat",
+                "subcategory_name": "mtrl-sci"
+            }
+        ],
+        "arxiv_id": "0704.0067",
+        "submitter_norm": {
+            "first_name": "Lawrence",
+            "last_name": "Friedman",
+            "third_name": null
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-04-01T05:30:59"
+            }
+        ]
+    },
+    {
+        "title": "A Note About the {Ki(z)} Functions",
+        "comments": "Accepted in Rocky Mountain Journal of mathematics",
+        "journal-ref": null,
+        "doi": null,
+        "license": null,
+        "update_date": "2007-06-13",
+        "norm_authors": [
+            {
+                "first_name": "Branko J.",
+                "last_name": "Malesevic",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "math",
+                "subcategory_name": "NT"
+            },
+            {
+                "category_name": "math",
+                "subcategory_name": "CV"
+            }
+        ],
+        "arxiv_id": "0704.0068",
+        "submitter_norm": {
+            "first_name": "Branko",
+            "last_name": "Malesevic",
+            "third_name": null
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-04-01T05:42:28"
+            },
+            {
+                "name": "v2",
+                "create_date": "2007-05-25T17:07:20"
+            }
+        ]
+    },
+    {
+        "title": "Dynamical Objects for Cohomologically Expanding Maps",
+        "comments": "38 pages",
+        "journal-ref": null,
+        "doi": null,
+        "license": null,
+        "update_date": "2010-01-08",
+        "norm_authors": [
+            {
+                "first_name": "John W.",
+                "last_name": "Robertson",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "math",
+                "subcategory_name": "DS"
+            }
+        ],
+        "arxiv_id": "0704.0069",
+        "submitter_norm": {
+            "first_name": "John",
+            "last_name": "Robertson",
+            "third_name": null
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-04-01T06:48:47"
+            }
+        ]
+    },
+    {
+        "title": "Coincidence of the oscillations in the dipole transition and in the\n  persistent current of narrow quantum rings with two electrons",
+        "comments": "5 pages, 4 figures, submitted",
+        "journal-ref": "J. Phys.: Condens. Matter 20 (2008) 055214",
+        "doi": null,
+        "license": null,
+        "update_date": "2008-01-19",
+        "norm_authors": [
+            {
+                "first_name": "He",
+                "last_name": "Yanzhang",
+                "third_name": ""
+            },
+            {
+                "first_name": "Bao",
+                "last_name": "Chengguang",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "cond-mat",
+                "subcategory_name": "mes-hall"
+            }
+        ],
+        "arxiv_id": "0704.0070",
+        "submitter_norm": {
+            "first_name": "Yanzhang",
+            "last_name": "He",
+            "third_name": null
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-04-01T06:49:32"
+            }
+        ]
+    },
+    {
+        "title": "Pairwise comparisons of typological profiles (of languages)",
+        "comments": "Linguistics, 10 pages including figure and tables,",
+        "journal-ref": null,
+        "doi": null,
+        "license": null,
+        "update_date": "2007-05-23",
+        "norm_authors": [
+            {
+                "first_name": "S.",
+                "last_name": "Wichmann",
+                "third_name": ""
+            },
+            {
+                "first_name": "E. W.",
+                "last_name": "Holman",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "physics",
+                "subcategory_name": "soc-ph"
+            }
+        ],
+        "arxiv_id": "0704.0071",
+        "submitter_norm": {
+            "first_name": "Dietrich",
+            "last_name": "Stauffer",
+            "third_name": null
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-04-01T07:36:16"
+            }
+        ]
+    },
+    {
+        "title": "The decomposition method and Maple procedure for finding first integrals\n  of nonlinear PDEs of any order with any number of independent variables",
+        "comments": "13 pages; Submitted to the 10th International Workshop in Computer\n  Algebra in Scientific Computing, CASC 2007",
+        "journal-ref": null,
+        "doi": null,
+        "license": null,
+        "update_date": "2007-05-23",
+        "norm_authors": [
+            {
+                "first_name": "Yu. N.",
+                "last_name": "Kosovtsov",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "math-ph math.MP",
+                "subcategory_name": null
+            },
+            {
+                "category_name": "math",
+                "subcategory_name": "MP"
+            }
+        ],
+        "arxiv_id": "0704.0072",
+        "submitter_norm": {
+            "first_name": "Yurii",
+            "last_name": "Kosovtsov",
+            "third_name": null
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-04-01T07:58:53"
+            }
+        ]
+    },
+    {
+        "title": "A transcendental approach to Koll\\'ar's injectivity theorem",
+        "comments": "22 pages; a minor revision of the preprint circulated in January\n  2006, v2: minor modifications, v3: final version, to appear in Osaka J. Math",
+        "journal-ref": null,
+        "doi": null,
+        "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+        "update_date": "2012-03-06",
+        "norm_authors": [
+            {
+                "first_name": "Osamu",
+                "last_name": "Fujino",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "math",
+                "subcategory_name": "AG"
+            }
+        ],
+        "arxiv_id": "0704.0073",
+        "submitter_norm": {
+            "first_name": "Osamu",
+            "last_name": "Fujino",
+            "third_name": null
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-04-01T08:40:19"
+            },
+            {
+                "name": "v2",
+                "create_date": "2011-01-04T00:41:06"
+            },
+            {
+                "name": "v3",
+                "create_date": "2012-03-05T01:44:29"
+            }
+        ]
+    },
+    {
+        "title": "Injective Morita contexts (revisited)",
+        "comments": null,
+        "journal-ref": null,
+        "doi": null,
+        "license": null,
+        "update_date": "2007-08-22",
+        "norm_authors": [
+            {
+                "first_name": "J. Y.",
+                "last_name": "Abuhlail",
+                "third_name": ""
+            },
+            {
+                "first_name": "S. K.",
+                "last_name": "Nauman",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "math",
+                "subcategory_name": "RA"
+            }
+        ],
+        "arxiv_id": "0704.0074",
+        "submitter_norm": {
+            "first_name": "Jawad",
+            "last_name": "Y.",
+            "third_name": "Abuhlail"
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-04-01T09:34:47"
+            },
+            {
+                "name": "v2",
+                "create_date": "2007-08-21T21:54:33"
+            }
+        ]
+    },
+    {
+        "title": "Strong decays of charmed baryons",
+        "comments": "13 pages, 9 figures, 9 tables. Some descriptions changed. Published\n  version in PRD",
+        "journal-ref": "Phys.Rev.D75:094017,2007",
+        "doi": "10.1103/PhysRevD.75.094017",
+        "license": null,
+        "update_date": "2008-11-26",
+        "norm_authors": [
+            {
+                "first_name": "Chong",
+                "last_name": "Chen",
+                "third_name": ""
+            },
+            {
+                "first_name": "Xiao-Lin",
+                "last_name": "Chen",
+                "third_name": ""
+            },
+            {
+                "first_name": "Xiang",
+                "last_name": "Liu",
+                "third_name": ""
+            },
+            {
+                "first_name": "Wei-Zhen",
+                "last_name": "Deng",
+                "third_name": ""
+            },
+            {
+                "first_name": "Shi-Lin",
+                "last_name": "Zhu",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "hep-ph hep-ex nucl-ex",
+                "subcategory_name": null
+            },
+            {
+                "category_name": "hep-ph hep-ex nucl-ex",
+                "subcategory_name": null
+            },
+            {
+                "category_name": "hep-ph hep-ex nucl-ex",
+                "subcategory_name": null
+            }
+        ],
+        "arxiv_id": "0704.0075",
+        "submitter_norm": {
+            "first_name": "Xiang",
+            "last_name": "Liu",
+            "third_name": null
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-04-01T09:45:55"
+            },
+            {
+                "name": "v2",
+                "create_date": "2007-04-04T12:24:08"
+            },
+            {
+                "name": "v3",
+                "create_date": "2007-04-20T16:20:10"
+            }
+        ]
+    },
+    {
+        "title": "CP violation in beauty decays",
+        "comments": "27 pages, minor corrections, to be published in Int. J. Mod. Phys. A",
+        "journal-ref": "Int.J.Mod.Phys.A22:1953-1982,2007",
+        "doi": "10.1142/S0217751X07036579",
+        "license": null,
+        "update_date": "2008-11-26",
+        "norm_authors": [
+            {
+                "first_name": "Michael",
+                "last_name": "Gronau",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "hep-ph hep-ex",
+                "subcategory_name": null
+            },
+            {
+                "category_name": "hep-ph hep-ex",
+                "subcategory_name": null
+            }
+        ],
+        "arxiv_id": "0704.0076",
+        "submitter_norm": {
+            "first_name": "Michael",
+            "last_name": "Gronau",
+            "third_name": null
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-04-01T17:33:15"
+            },
+            {
+                "name": "v2",
+                "create_date": "2007-04-16T13:15:55"
+            }
+        ]
+    },
+    {
+        "title": "Universal Forces and the Dark Energy Problem",
+        "comments": "9 pages. no figures",
+        "journal-ref": null,
+        "doi": null,
+        "license": null,
+        "update_date": "2007-05-23",
+        "norm_authors": [
+            {
+                "first_name": "Afsar",
+                "last_name": "Abbas",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "physics",
+                "subcategory_name": "gen-ph"
+            }
+        ],
+        "arxiv_id": "0704.0077",
+        "submitter_norm": {
+            "first_name": "Afsar",
+            "last_name": "Abbas",
+            "third_name": null
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-04-01T09:49:01"
+            }
+        ]
+    },
+    {
+        "title": "Linear perturbations of matched spacetimes: the gauge problem and\n  background symmetries",
+        "comments": "18 pages, plain LaTeX file",
+        "journal-ref": "Class.Quant.Grav.24:3673-3690,2007",
+        "doi": "10.1088/0264-9381/24/14/008",
+        "license": null,
+        "update_date": "2008-11-26",
+        "norm_authors": [
+            {
+                "first_name": "Marc",
+                "last_name": "Mars",
+                "third_name": ""
+            },
+            {
+                "first_name": "Filipe C.",
+                "last_name": "Mena",
+                "third_name": ""
+            },
+            {
+                "first_name": "Raul",
+                "last_name": "Vera",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "gr-qc",
+                "subcategory_name": null
+            }
+        ],
+        "arxiv_id": "0704.0078",
+        "submitter_norm": {
+            "first_name": "Raul",
+            "last_name": "Vera",
+            "third_name": null
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-04-01T10:08:25"
+            }
+        ]
+    },
+    {
+        "title": "Operator algebras associated with unitary commutation relations",
+        "comments": "38 pages",
+        "journal-ref": null,
+        "doi": null,
+        "license": null,
+        "update_date": "2007-05-23",
+        "norm_authors": [
+            {
+                "first_name": "Stephen C.",
+                "last_name": "Power",
+                "third_name": ""
+            },
+            {
+                "first_name": "Baruch",
+                "last_name": "Solel",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "math",
+                "subcategory_name": "OA"
+            }
+        ],
+        "arxiv_id": "0704.0079",
+        "submitter_norm": {
+            "first_name": "Stephen",
+            "last_name": "C.",
+            "third_name": "Power"
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-04-02T15:04:48"
+            }
+        ]
+    },
+    {
+        "title": "Shaping the Globular Cluster Mass Function by Stellar-Dynamical\n  Evaporation",
+        "comments": "Final version, matching the published paper",
+        "journal-ref": "Astrophys.J.679:1272-1287,2008",
+        "doi": "10.1086/533485",
+        "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+        "update_date": "2010-11-11",
+        "norm_authors": [
+            {
+                "first_name": "Dean E.",
+                "last_name": "McLaughlin",
+                "third_name": ""
+            },
+            {
+                "first_name": "S. Michael",
+                "last_name": "Fall",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "astro-ph",
+                "subcategory_name": null
+            }
+        ],
+        "arxiv_id": "0704.0080",
+        "submitter_norm": {
+            "first_name": "Dean",
+            "last_name": "McLaughlin",
+            "third_name": null
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-04-01T10:20:37"
+            },
+            {
+                "name": "v2",
+                "create_date": "2007-09-10T16:43:49"
+            },
+            {
+                "name": "v3",
+                "create_date": "2008-01-24T17:02:00"
+            },
+            {
+                "name": "v4",
+                "create_date": "2008-06-11T17:15:32"
+            }
+        ]
+    },
+    {
+        "title": "Quantum Deformations of Relativistic Symmetries",
+        "comments": "10 pages. Invited talk at the XXII Max Born Symposium \"Quantum, Super\n  and Twistors\", September 27-29, 2006, Wroclaw (Poland), in honour of Jerzy\n  Lukierski.",
+        "journal-ref": null,
+        "doi": null,
+        "license": null,
+        "update_date": "2007-05-23",
+        "norm_authors": [
+            {
+                "first_name": "V. N.",
+                "last_name": "Tolstoy",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "math",
+                "subcategory_name": "QA"
+            },
+            {
+                "category_name": "math.QA hep-th math-ph math.MP math.RT",
+                "subcategory_name": null
+            },
+            {
+                "category_name": "math.QA hep-th math-ph math.MP math.RT",
+                "subcategory_name": null
+            },
+            {
+                "category_name": "math",
+                "subcategory_name": "MP"
+            },
+            {
+                "category_name": "math",
+                "subcategory_name": "RT"
+            }
+        ],
+        "arxiv_id": "0704.0081",
+        "submitter_norm": {
+            "first_name": "Valeriy",
+            "last_name": "Tolstoy",
+            "third_name": null
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-04-02T13:06:59"
+            }
+        ]
+    },
+    {
+        "title": "Matter-Wave Bright Solitons with a Finite Background in Spinor\n  Bose-Einstein Condensates",
+        "comments": "18 pages, 4 figures, LaTeX",
+        "journal-ref": null,
+        "doi": "10.1143/JPSJ.76.084002",
+        "license": null,
+        "update_date": "2009-11-13",
+        "norm_authors": [
+            {
+                "first_name": "Tetsuo",
+                "last_name": "Kurosaki",
+                "third_name": ""
+            },
+            {
+                "first_name": "Miki",
+                "last_name": "Wadati",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "cond-mat",
+                "subcategory_name": "other"
+            },
+            {
+                "category_name": "cond-mat",
+                "subcategory_name": "stat-mech"
+            }
+        ],
+        "arxiv_id": "0704.0082",
+        "submitter_norm": {
+            "first_name": "Tetsuo",
+            "last_name": "Kurosaki",
+            "third_name": null
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-04-01T12:26:50"
+            }
+        ]
+    },
+    {
+        "title": "Why there is something rather than nothing (out of everything)?",
+        "comments": "4 pages, RevTex, several references added and minor changes done",
+        "journal-ref": "Phys.Rev.Lett.99:071301,2007",
+        "doi": "10.1103/PhysRevLett.99.071301",
+        "license": null,
+        "update_date": "2008-11-26",
+        "norm_authors": [
+            {
+                "first_name": "A. O.",
+                "last_name": "Barvinsky",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "hep-th",
+                "subcategory_name": null
+            }
+        ],
+        "arxiv_id": "0704.0083",
+        "submitter_norm": {
+            "first_name": "Andrei",
+            "last_name": "Barvinsky",
+            "third_name": null
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-04-01T12:38:03"
+            },
+            {
+                "name": "v2",
+                "create_date": "2007-04-09T19:39:24"
+            }
+        ]
+    },
+    {
+        "title": "Formation of density singularities in ideal hydrodynamics of freely\n  cooling inelastic gases: a family of exact solutions",
+        "comments": "19 pages, 7 figures",
+        "journal-ref": null,
+        "doi": "10.1063/1.2767361",
+        "license": null,
+        "update_date": "2009-11-13",
+        "norm_authors": [
+            {
+                "first_name": "Itzhak",
+                "last_name": "Fouxon",
+                "third_name": ""
+            },
+            {
+                "first_name": "Baruch",
+                "last_name": "Meerson",
+                "third_name": ""
+            },
+            {
+                "first_name": "Michael",
+                "last_name": "Assaf",
+                "third_name": ""
+            },
+            {
+                "first_name": "Eli",
+                "last_name": "Livne",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "cond-mat",
+                "subcategory_name": "soft"
+            },
+            {
+                "category_name": "nlin",
+                "subcategory_name": "PS"
+            },
+            {
+                "category_name": "physics",
+                "subcategory_name": "flu-dyn"
+            }
+        ],
+        "arxiv_id": "0704.0084",
+        "submitter_norm": {
+            "first_name": "Baruch",
+            "last_name": "Meerson",
+            "third_name": null
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-04-01T12:54:14"
+            },
+            {
+                "name": "v2",
+                "create_date": "2007-05-09T07:00:42"
+            }
+        ]
+    },
+    {
+        "title": "A Universality in PP-Waves",
+        "comments": "LaTeX file, 43 pages, one reference added, minor changes made",
+        "journal-ref": "JHEP 0706:061,2007",
+        "doi": "10.1088/1126-6708/2007/06/061",
+        "license": null,
+        "update_date": "2009-11-13",
+        "norm_authors": [
+            {
+                "first_name": "Partha",
+                "last_name": "Mukhopadhyay",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "hep-th",
+                "subcategory_name": null
+            }
+        ],
+        "arxiv_id": "0704.0085",
+        "submitter_norm": {
+            "first_name": "Partha",
+            "last_name": "Mukhopadhyay",
+            "third_name": null
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-04-01T12:55:02"
+            },
+            {
+                "name": "v2",
+                "create_date": "2007-04-09T12:06:19"
+            }
+        ]
+    },
+    {
+        "title": "Clustering in a stochastic model of one-dimensional gas",
+        "comments": "Published in at http://dx.doi.org/10.1214/07-AAP481 the Annals of\n  Applied Probability (http://www.imstat.org/aap/) by the Institute of\n  Mathematical Statistics (http://www.imstat.org)",
+        "journal-ref": "Annals of Applied Probability 2008, Vol. 18, No. 3, 1026-1058",
+        "doi": "10.1214/07-AAP481",
+        "license": null,
+        "update_date": "2008-06-17",
+        "norm_authors": [
+            {
+                "first_name": "Vladislav V.",
+                "last_name": "Vysotsky",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "math",
+                "subcategory_name": "PR"
+            }
+        ],
+        "arxiv_id": "0704.0086",
+        "submitter_norm": {
+            "first_name": "Vladislav",
+            "last_name": "Vysotsky",
+            "third_name": null
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-04-01T13:10:43"
+            },
+            {
+                "name": "v2",
+                "create_date": "2008-06-17T06:56:43"
+            }
+        ]
+    },
+    {
+        "title": "Approximate solutions to the Dirichlet problem for harmonic maps between\n  hyperbolic spaces",
+        "comments": null,
+        "journal-ref": null,
+        "doi": null,
+        "license": null,
+        "update_date": "2007-06-13",
+        "norm_authors": [
+            {
+                "first_name": "Duong Minh",
+                "last_name": "Duc",
+                "third_name": ""
+            },
+            {
+                "first_name": "Truong Trung",
+                "last_name": "Tuyen",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "math",
+                "subcategory_name": "DG"
+            }
+        ],
+        "arxiv_id": "0704.0087",
+        "submitter_norm": {
+            "first_name": "Tuyen",
+            "last_name": "Truong",
+            "third_name": null
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-04-01T13:44:50"
+            },
+            {
+                "name": "v2",
+                "create_date": "2007-05-23T12:49:52"
+            }
+        ]
+    },
+    {
+        "title": "Some new experimental photonic flame effect features",
+        "comments": "9 pages, 10 figures, accepted for publication in JRLR",
+        "journal-ref": null,
+        "doi": null,
+        "license": null,
+        "update_date": "2007-05-23",
+        "norm_authors": [
+            {
+                "first_name": "N. V.",
+                "last_name": "Tcherniega",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "physics",
+                "subcategory_name": "optics"
+            }
+        ],
+        "arxiv_id": "0704.0088",
+        "submitter_norm": {
+            "first_name": "Nikolay",
+            "last_name": "Tcherniega",
+            "third_name": "V."
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-04-01T14:10:51"
+            }
+        ]
+    },
+    {
+        "title": "A general approach to statistical modeling of physical laws:\n  nonparametric regression",
+        "comments": "17 pages, 8 eps figures, uses revtex4.cls",
+        "journal-ref": null,
+        "doi": null,
+        "license": null,
+        "update_date": "2007-05-23",
+        "norm_authors": [
+            {
+                "first_name": "I.",
+                "last_name": "Grabec",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "physics",
+                "subcategory_name": "data-an"
+            },
+            {
+                "category_name": "physics",
+                "subcategory_name": "gen-ph"
+            }
+        ],
+        "arxiv_id": "0704.0089",
+        "submitter_norm": {
+            "first_name": "Igor",
+            "last_name": "Grabec",
+            "third_name": null
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-04-01T14:29:57"
+            }
+        ]
+    },
+    {
+        "title": "Real Options for Project Schedules (ROPS)",
+        "comments": null,
+        "journal-ref": null,
+        "doi": null,
+        "license": null,
+        "update_date": "2007-05-23",
+        "norm_authors": [
+            {
+                "first_name": "Lester",
+                "last_name": "Ingber",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "cs",
+                "subcategory_name": "CE"
+            },
+            {
+                "category_name": "cond-mat",
+                "subcategory_name": "stat-mech"
+            },
+            {
+                "category_name": "cs",
+                "subcategory_name": "MS"
+            },
+            {
+                "category_name": "cs",
+                "subcategory_name": "NA"
+            },
+            {
+                "category_name": "physics",
+                "subcategory_name": "data-an"
+            }
+        ],
+        "arxiv_id": "0704.0090",
+        "submitter_norm": {
+            "first_name": "Lester",
+            "last_name": "Ingber",
+            "third_name": null
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-04-01T14:35:40"
+            }
+        ]
+    },
+    {
+        "title": "Groups with finitely many conjugacy classes and their automorphisms",
+        "comments": "30 pages, 2 figures. Version 2: corrected several misprints and added\n  new Lemma 6.4",
+        "journal-ref": "Comm. Math. Helv. 84 (2009), No. 2, pp. 259--296.",
+        "doi": null,
+        "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+        "update_date": "2009-07-07",
+        "norm_authors": [
+            {
+                "first_name": "Ashot",
+                "last_name": "Minasyan",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "math",
+                "subcategory_name": "GR"
+            }
+        ],
+        "arxiv_id": "0704.0091",
+        "submitter_norm": {
+            "first_name": "Ashot",
+            "last_name": "Minasyan",
+            "third_name": null
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-04-01T15:17:36"
+            },
+            {
+                "name": "v2",
+                "create_date": "2008-08-18T12:20:58"
+            }
+        ]
+    },
+    {
+        "title": "Energy density for chiral lattice fermions with chemical potential",
+        "comments": "Minor changes in the text. Version to appear in Phys. Rev. D",
+        "journal-ref": "Phys.Rev.D76:054502,2007",
+        "doi": "10.1103/PhysRevD.76.054502",
+        "license": null,
+        "update_date": "2008-11-26",
+        "norm_authors": [
+            {
+                "first_name": "Christof",
+                "last_name": "Gattringer",
+                "third_name": ""
+            },
+            {
+                "first_name": "Ludovit",
+                "last_name": "Liptak",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "hep-lat hep-ph",
+                "subcategory_name": null
+            },
+            {
+                "category_name": "hep-lat hep-ph",
+                "subcategory_name": null
+            }
+        ],
+        "arxiv_id": "0704.0092",
+        "submitter_norm": {
+            "first_name": "Christof",
+            "last_name": "Gattringer",
+            "third_name": null
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-04-01T16:20:10"
+            },
+            {
+                "name": "v2",
+                "create_date": "2007-07-26T10:50:05"
+            }
+        ]
+    },
+    {
+        "title": "Aspects of Electron-Phonon Self-Energy Revealed from Angle-Resolved\n  Photoemission Spectroscopy",
+        "comments": "8 pages, 4 figures. Accepted by Phys. Rev. B",
+        "journal-ref": "Phys. Rev. B 75, 195116 (2007)",
+        "doi": "10.1103/PhysRevB.75.195116",
+        "license": null,
+        "update_date": "2008-01-16",
+        "norm_authors": [
+            {
+                "first_name": "W. S.",
+                "last_name": "Lee",
+                "third_name": ""
+            },
+            {
+                "first_name": "S.",
+                "last_name": "Johnston",
+                "third_name": ""
+            },
+            {
+                "first_name": "T. P.",
+                "last_name": "Devereaux",
+                "third_name": ""
+            },
+            {
+                "first_name": "Z. -X.",
+                "last_name": "Shen",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "cond-mat",
+                "subcategory_name": "supr-con"
+            },
+            {
+                "category_name": "cond-mat",
+                "subcategory_name": "str-el"
+            }
+        ],
+        "arxiv_id": "0704.0093",
+        "submitter_norm": {
+            "first_name": "Wei-Sheng",
+            "last_name": "Lee",
+            "third_name": null
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-04-01T16:47:32"
+            }
+        ]
+    },
+    {
+        "title": "Geometry of Locally Compact Groups of Polynomial Growth and Shape of\n  Large Balls",
+        "comments": "slightly expanded and polished new version, 57 pages, 2 figures",
+        "journal-ref": null,
+        "doi": null,
+        "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+        "update_date": "2012-04-11",
+        "norm_authors": [
+            {
+                "first_name": "Emmanuel",
+                "last_name": "Breuillard",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "math",
+                "subcategory_name": "GR"
+            },
+            {
+                "category_name": "math",
+                "subcategory_name": "DG"
+            }
+        ],
+        "arxiv_id": "0704.0095",
+        "submitter_norm": {
+            "first_name": "Emmanuel",
+            "last_name": "Breuillard",
+            "third_name": "F."
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-04-01T16:59:04"
+            },
+            {
+                "name": "v2",
+                "create_date": "2012-04-10T05:13:40"
+            }
+        ]
+    },
+    {
+        "title": "Much ado about 248",
+        "comments": "5 pages",
+        "journal-ref": null,
+        "doi": null,
+        "license": null,
+        "update_date": "2007-05-23",
+        "norm_authors": [
+            {
+                "first_name": "M. C.",
+                "last_name": "Nucci",
+                "third_name": ""
+            },
+            {
+                "first_name": "P. G. L.",
+                "last_name": "Leach",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "nlin",
+                "subcategory_name": "SI"
+            }
+        ],
+        "arxiv_id": "0704.0096",
+        "submitter_norm": {
+            "first_name": "M.",
+            "last_name": "C.",
+            "third_name": "Nucci"
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-04-01T17:28:15"
+            }
+        ]
+    },
+    {
+        "title": "Conformal Field Theory and Operator Algebras",
+        "comments": "For the Proceedings of ICMP (Rio de Janeiro, 2006).",
+        "journal-ref": null,
+        "doi": null,
+        "license": null,
+        "update_date": "2007-05-23",
+        "norm_authors": [
+            {
+                "first_name": "Yasuyuki",
+                "last_name": "Kawahigashi",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "math-ph math.MP math.OA",
+                "subcategory_name": null
+            },
+            {
+                "category_name": "math",
+                "subcategory_name": "MP"
+            },
+            {
+                "category_name": "math",
+                "subcategory_name": "OA"
+            }
+        ],
+        "arxiv_id": "0704.0097",
+        "submitter_norm": {
+            "first_name": "Yasuyuki",
+            "last_name": "Kawahigashi",
+            "third_name": null
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-04-01T18:02:55"
+            }
+        ]
+    },
+    {
+        "title": "Sparsely-spread CDMA - a statistical mechanics based analysis",
+        "comments": "23 pages, 5 figures, figure 1 amended since published version",
+        "journal-ref": "J. Phys. A: Math. Theor. 40 No 41 (12 October 2007) 12315-12333",
+        "doi": "10.1088/1751-8113/40/41/004",
+        "license": null,
+        "update_date": "2009-11-13",
+        "norm_authors": [
+            {
+                "first_name": "Jack",
+                "last_name": "Raymond",
+                "third_name": ""
+            },
+            {
+                "first_name": "David",
+                "last_name": "Saad",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "cs",
+                "subcategory_name": "IT"
+            },
+            {
+                "category_name": "math",
+                "subcategory_name": "IT"
+            }
+        ],
+        "arxiv_id": "0704.0098",
+        "submitter_norm": {
+            "first_name": "Jack",
+            "last_name": "Raymond",
+            "third_name": null
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-04-01T18:27:26"
+            },
+            {
+                "name": "v2",
+                "create_date": "2007-04-27T12:39:14"
+            },
+            {
+                "name": "v3",
+                "create_date": "2007-08-01T19:10:18"
+            },
+            {
+                "name": "v4",
+                "create_date": "2007-10-07T16:50:39"
+            },
+            {
+                "name": "v5",
+                "create_date": "2008-04-30T15:36:55"
+            }
+        ]
+    },
+    {
+        "title": "On Ando's inequalities for convex and concave functions",
+        "comments": "18 pages",
+        "journal-ref": null,
+        "doi": null,
+        "license": null,
+        "update_date": "2007-05-23",
+        "norm_authors": [
+            {
+                "first_name": "Koenraad M. R.",
+                "last_name": "Audenaert",
+                "third_name": ""
+            },
+            {
+                "first_name": "Jaspal Singh",
+                "last_name": "Aujla",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "math",
+                "subcategory_name": "FA"
+            }
+        ],
+        "arxiv_id": "0704.0099",
+        "submitter_norm": {
+            "first_name": "Koenraad",
+            "last_name": "M.",
+            "third_name": "R."
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-04-01T18:14:32"
+            }
+        ]
+    },
+    {
+        "title": "Topology Change of Black Holes",
+        "comments": "13 pages, 12 figures",
+        "journal-ref": "Prog.Theor.Phys.118:715-727,2007",
+        "doi": "10.1143/PTP.118.715",
+        "license": null,
+        "update_date": "2008-11-26",
+        "norm_authors": [
+            {
+                "first_name": "Daisuke",
+                "last_name": "Ida",
+                "third_name": ""
+            },
+            {
+                "first_name": "Masaru",
+                "last_name": "Siino",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "gr-qc",
+                "subcategory_name": null
+            }
+        ],
+        "arxiv_id": "0704.0100",
+        "submitter_norm": {
+            "first_name": "Daisuke",
+            "last_name": "Ida",
+            "third_name": null
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-04-02T10:11:53"
+            },
+            {
+                "name": "v2",
+                "create_date": "2007-04-02T22:21:01"
+            },
+            {
+                "name": "v3",
+                "create_date": "2007-10-31T15:14:41"
+            }
+        ]
+    },
+    {
+        "title": "The birth of string theory",
+        "comments": "Latex 60 pages, 2 figures, uses svmult.cls. Contribution to the\n  volume \"String theory and fundamental interactions\", dedicated to Gabriele\n  Veneziano on his 65th birthday.",
+        "journal-ref": "Lect.NotesPhys.737:59-118,2008",
+        "doi": null,
+        "license": null,
+        "update_date": "2008-11-26",
+        "norm_authors": [
+            {
+                "first_name": "Paolo",
+                "last_name": "Di Vecchia",
+                "third_name": ""
+            }
+        ],
+        "norm_categories": [
+            {
+                "category_name": "hep-th",
+                "subcategory_name": null
+            }
+        ],
+        "arxiv_id": "0704.0101",
+        "submitter_norm": {
+            "first_name": "Paolo",
+            "last_name": "Di",
+            "third_name": "Vecchia"
+        },
+        "versions_norm": [
+            {
+                "name": "v1",
+                "create_date": "2007-04-01T19:30:02"
+            }
+        ]
+    }
+]

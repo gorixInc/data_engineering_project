@@ -9,7 +9,7 @@ from plugins.sqlalchemy_orm.snowflake_dirty import (Person, Submitter, Category,
                               JournalSpecifics, Authorship, PublicationCategory)
 
 # %%
-filename = "arxiv-metadata-full.json"
+filename = "data_sample.json"
 data = []
 with open(filename, 'rb') as f:
     i = 0

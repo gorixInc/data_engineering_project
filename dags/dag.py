@@ -1,6 +1,4 @@
 import sys
-sys.path.append('/opt/airflow/')
-sys.path.append('/opt/airflow/sqlalchemy_orm')
 import json
 from datetime import datetime, timedelta
 from glob import glob
@@ -13,12 +11,14 @@ from pathlib import Path
 from copy import deepcopy
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
+from datetime import datetime
 from sqlalchemy_orm.snowflake_dirty import (Person, Submitter, Category, 
                               SubCategory, Journal, Publication, License,
-                              JournalSpecifics, Authorship, PublicationCategory)
+                              JournalSpecifics, Authorship, PublicationCategory,
+                              Version)
 
 from airflow import DAG 
-from airflow.operators.python_operator import PythonOperator, BranchPythonOperator
+from airflow.operators.python_operator import PythonOperator , BranchPythonOperator
 from airflow.operators.bash_operator import BashOperator 
 from airflow.operators.dummy_operator import DummyOperator
 from airflow.providers.postgres.operators.postgres import PostgresOperator
@@ -56,7 +56,7 @@ file_sensor_task = FileSensor(
     task_id='file_sensor_task',
     filepath=f'{RAW_DATA_FOLDER}/*.json',
     fs_conn_id='fs_default',
-    poke_interval=300,
+    poke_interval=5,
     dag=convert_to_csv,
 )
 
@@ -108,10 +108,20 @@ def normalize_submitter(publication_data):
     }
     return submitter_obj
 
+def normalize_versions(publication_data):
+    versions = publication_data['versions']
+    versions_norm = []
+    for version in versions:
+        version_norm = {'name': version['version'],
+                        'create_date': datetime.strptime(version['created'], 
+                                                         "%a, %d %b %Y %H:%M:%S GMT").isoformat()}
+        versions_norm.append(version_norm)
+    return versions_norm
+    
+
 def normalize_json(publication_data):
     data_norm = deepcopy(publication_data)
     del data_norm['abstract'] 
-    del data_norm['versions']
     del data_norm['report-no']
     data_norm['norm_authors'] = normalize_authors(publication_data)
     del data_norm['authors']
@@ -122,13 +132,15 @@ def normalize_json(publication_data):
     del data_norm['id']
     data_norm['submitter_norm'] = normalize_submitter(publication_data)
     del data_norm['submitter']
+    data_norm['versions_norm'] = normalize_versions(publication_data)
+    del data_norm['versions']
 
     return data_norm
 
 def load_and_normalize(data_path, output_path, success_path):
     json_data = []
     for path in glob(data_path):
-        with open(path, 'r') as f:
+        with open(path, 'rb') as f:
             for line in f:
                 data = json.loads(line.strip())
                 json_data.append(data)
@@ -197,6 +209,7 @@ def insert_publication(publication_data, session):
     session.add(submitter_obj)
 
     
+    versions_norm = publication_data.pop('versions_norm')
 
     publication_obj = Publication(**publication_data,
                                   submitter=submitter_obj,
@@ -204,6 +217,12 @@ def insert_publication(publication_data, session):
                                   )
     session.add(publication_obj)
 
+    for version_norm in versions_norm:
+        version_obj = Version(name=version_norm['name'], 
+                              create_date=datetime.fromisoformat(version_norm['create_date']),
+                              publication=publication_obj)
+        session.add(version_obj)
+    
     for person_obj in person_objs:
         authorship_obj = Authorship(author=person_obj, publication=publication_obj)
         session.add(authorship_obj)
@@ -237,7 +256,7 @@ file_sensor_task_norm = FileSensor(
     task_id='file_sensor_task_norm',
     filepath=f'{NORM_DATA_FOLDER}/*.json',
     fs_conn_id='fs_default',
-    poke_interval=300,
+    poke_interval=5,
     dag=convert_to_csv,
 )
 

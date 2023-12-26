@@ -19,6 +19,15 @@ class Submitter(Base):
     last_name = Column(Text)
     third_name = Column(Text)
 
+class Version(Base):
+    __tablename__ = 'version'
+    __table_args__ = {'schema': 'raw_data_snowflake'}
+    id = Column(Integer, primary_key=True)
+    publication_id = Column(Integer, ForeignKey('raw_data_snowflake.publication.id'))
+    name = Column(Text)
+    create_date = Column(Date)
+    publication = relationship("Publication")
+    
 class License(Base):
     __tablename__ = 'license'
     __table_args__ = {'schema': 'raw_data_snowflake'}
