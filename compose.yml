@@ -137,7 +137,8 @@ services:
     # environment:
     #   - PYTHONPATH=/opt/airflow/sqlalchemy_orm
     # volumes:
-    #   - ./sqlalchemy_orm:/opt/airflow/sqlalchemy_orm
+    #   - ./dags:/usr/local/airflow/dags
+    #   - ./sqlalchemy_orm:/usr/local/airflow/dags/sqlalchemy_orm
     depends_on:
       <<: *airflow-common-depends-on
       airflow-init:
@@ -155,9 +156,10 @@ services:
       start_period: 30s
     restart: always
     # environment:
-    #   - PYTHONPATH=/opt/airflow/sqlalchemy_orm
+    #   - PYTHONPATH=$AIRFLOW_HOME/includes:$PYTHONPATH
     # volumes:
-    #   - ./sqlalchemy_orm:/opt/airflow/sqlalchemy_orm
+    #   - ./dags:/usr/local/airflow/dags
+    #   - ./sqlalchemy_orm:/usr/local/airflow/dags/sqlalchemy_orm
     depends_on:
       <<: *airflow-common-depends-on
       airflow-init:
