@@ -31,7 +31,7 @@ DEFAULT_ARGS = {
     'retry_delay': timedelta(minutes=5)
 }
 
-DATABASE_URL = "postgresql://airflow:airflow@localhost:5432/airflow"
+DATABASE_URL = "postgresql+psycopg2://airflow:airflow@postgres/airflow"
 DATA_FOLDER = '/tmp/data'
 RAW_DATA_FOLDER = '/tmp/data/raw_data'
 RAW_DATA_SUCCESS_FOLDER = '/tmp/data/raw_data_processed'
@@ -128,9 +128,10 @@ def normalize_json(publication_data):
 def load_and_normalize(data_path, output_path, success_path):
     json_data = []
     for path in glob(data_path):
-        with open(path, 'r') as f: 
+        with open(path, 'r') as f:
             for line in f:
-                json_data.append(json.loads(line.strip()))
+                data = json.loads(line.strip())
+                json_data.append(data)
         shutil.move(path, Path(success_path)/Path(path).name)
 
     norm_datas = []
@@ -227,7 +228,7 @@ def insert_normalized_json(data_path, success_path):
         with open(path, 'r') as f:
             publication_data_list = json.load(f)
         for publication_data in publication_data_list:
-            insert_publication(publication_data)
+            insert_publication(publication_data, session)
         shutil.move(path, Path(success_path)/Path(path).name)
     session.close()
 

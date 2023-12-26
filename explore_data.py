@@ -4,7 +4,7 @@ from glob import glob
 import pandas as pd
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from sqlalchemy_orm.snowflake_dirty import (Person, Submitter, Category, 
+from plugins.sqlalchemy_orm.snowflake_dirty import (Person, Submitter, Category, 
                               SubCategory, Journal, Publication, License,
                               JournalSpecifics, Authorship, PublicationCategory)
 
@@ -17,12 +17,11 @@ with open(filename, 'rb') as f:
         # Process each line
         json_data = json.loads(line.strip())
         data.append(json_data)
-        print(json_data['comments'])
         i += 1
         if i > 50:
             break
 # %%
-
+DATABASE_URL = "postgresql://airflow:airflow@localhost:5432/airflow"
 def insert_publication(publication_data):
     DATABASE_URL = "postgresql://airflow:airflow@localhost:5432/airflow"
     engine = create_engine(DATABASE_URL)
@@ -96,4 +95,10 @@ with open('test_data.json', 'r') as f:
 
 print(publication_data[0])
 insert_publication(publication_data[0])
+# %%
+DATABASE_URL = "postgresql://airflow:airflow@localhost:5432/airflow"
+engine = create_engine(DATABASE_URL)
+Session = sessionmaker(bind=engine)
+session = Session()
+session.commit()
 # %%
