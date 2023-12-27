@@ -12,7 +12,7 @@ from copy import deepcopy
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from datetime import datetime
-from sqlalchemy_orm.snowflake_dirty import (Person, Submitter, Category, 
+from sqlalchemy_orm.staging import (Person, Submitter, Category, 
                               SubCategory, Journal, Publication, License,
                               JournalSpecifics, Authorship, PublicationCategory,
                               Version)
@@ -31,33 +31,22 @@ DEFAULT_ARGS = {
     'retry_delay': timedelta(minutes=5)
 }
 
-DATABASE_URL = "postgresql+psycopg2://airflow:airflow@postgres/airflow"
-DATA_FOLDER = '/tmp/data'
-RAW_DATA_FOLDER = '/tmp/data/raw_data'
-RAW_DATA_SUCCESS_FOLDER = '/tmp/data/raw_data_processed'
-NORM_DATA_FOLDER = '/tmp/data/norm_jsons'
-NORM_SUCCESS_FOLDER = '/tmp/data/norm_jsons_processed'
+DATABASE_URL = "postgresql+psycopg2://airflow:airflow@postgres/main"
 
-convert_to_csv = DAG(
-    dag_id='convert_to_csv', # name of dag
-    schedule_interval='*/10 * * * *', # execute every 10 minutes
+RAW_DATA_INPUT = '/tmp/data/raw_data/input'
+RAW_DATA_SUCCESS = '/tmp/data/raw_data/success'
+RAW_DATA_FAIL = '/tmp/data/raw_data/fail'
+
+NORM_JSON_INPUT = '/tmp/data/norm_jsons/input'
+NORM_JSON_SUCCESS = '/tmp/data/norm_jsons/success'
+NORM_JSON_FAIL = '/tmp/data/norm_jsons/fail'
+
+upload_to_staging_db = DAG(
+    dag_id='upload_to_staging_db', # name of dag
+    schedule_interval='* * * * *', 
     start_date=datetime(2022,9,14,9,15,0),
     catchup=False, # in case execution has been paused, should it execute everything in between
-    template_searchpath=DATA_FOLDER, # the PostgresOperator will look for files in this folder
     default_args=DEFAULT_ARGS, # args assigned to all operators
-)
-
-# Task 1 - fetch the current ISS location and save it as a file.
-# Task 2 - find the closest country, save it to a file
-# Task 3 - save the closest country information to the database
-# Task 4 - output the continent
-
-file_sensor_task = FileSensor(
-    task_id='file_sensor_task',
-    filepath=f'{RAW_DATA_FOLDER}/*.json',
-    fs_conn_id='fs_default',
-    poke_interval=5,
-    dag=convert_to_csv,
 )
 
 
@@ -137,36 +126,70 @@ def normalize_json(publication_data):
 
     return data_norm
 
-def load_and_normalize(data_path, output_path, success_path):
-    json_data = []
-    for path in glob(data_path):
-        with open(path, 'rb') as f:
-            for line in f:
+def set_dict(d, key, item):
+    if key in d:
+        d[key].add(item)
+    else:
+        d[key] = set([item]) 
+
+def process_file(path, output_path, failed_lines, norm_datas, n_lines, batch_size):
+    with open(path, 'rb') as f:
+        for line in f:
+            try:
                 data = json.loads(line.strip())
-                json_data.append(data)
-        shutil.move(path, Path(success_path)/Path(path).name)
+            except:
+                failed_lines.append(line)
+                continue                    
+            try:
+                norm_data = normalize_json(data)
+                norm_datas.append(norm_data)
+            except:
+                failed_lines.append(line)
+                continue
+            
+            n_lines += 1
+            if n_lines > batch_size:
+                # Not handling exceptions here as it's perferrable to crash as errors here are not related to input data
+                with open(f'{output_path}/{uuid.uuid1()}.json', 'w') as f:
+                    json.dump(norm_datas, f, indent=4)
+                n_lines = 0
+                norm_datas = []
+            
+    return n_lines, norm_datas
 
+def load_and_normalize(data_path, output_path, success_path, fail_path, batch_size=100):
     norm_datas = []
-    for data in json_data:
-        norm_data = normalize_json(data)
-        norm_datas.append(norm_data)
+    n_lines = 0
+    for path in glob(data_path):
+        failed_lines = []
+        try:
+            n_lines, norm_datas = process_file(path, output_path, failed_lines, norm_datas, n_lines, batch_size)
+            if len(norm_datas) > 0:
+                with open(f'{output_path}/{uuid.uuid1()}.json', 'w') as f:
+                    json.dump(norm_datas, f, indent=4)
+            shutil.move(path, Path(success_path)/Path(path).name)
+        except:
+            shutil.move(path, Path(fail_path)/Path(path).name)
+        current_time = datetime.now().strftime("%Y%m%d_%H%M%S")
+        if len(failed_lines) > 0:
+            with open(Path(fail_path)/f'{Path(path).name}_{current_time}_failed_lines.txt', 'w') as file:
+                for item in failed_lines:
+                    file.write("%s" % item)
+    return
 
-    with open(f'{output_path}/{uuid.uuid1()}.json', 'w') as f:
-        json.dump(norm_datas, f, indent=4)
-
-process_file_task = PythonOperator(
-    task_id='convert_to_csv_task',
-    dag=convert_to_csv,
+normalize_json_task = PythonOperator(
+    task_id='normalize_json_task',
+    dag=upload_to_staging_db,
     trigger_rule='none_failed',
     python_callable=load_and_normalize,
     op_kwargs={
-        'data_path': f'{RAW_DATA_FOLDER}/*.json',
-        'output_path': NORM_DATA_FOLDER,
-        'success_path': RAW_DATA_SUCCESS_FOLDER
+        'data_path': f'{RAW_DATA_INPUT}/*.json',
+        'output_path': NORM_JSON_INPUT,
+        'success_path': RAW_DATA_SUCCESS,
+        'fail_path': RAW_DATA_FAIL,
+        'batch_size': 100
     },
 )
-
-file_sensor_task >> process_file_task
 
 
 def insert_publication(publication_data, session):
@@ -238,38 +261,34 @@ def insert_publication(publication_data, session):
     session.commit()
 
 
-def insert_normalized_json(data_path, success_path):
+def insert_normalized_json(data_path, success_path, fail_path):
     f_paths = glob(f'{data_path}/*.json')
     engine = create_engine(DATABASE_URL)
     Session = sessionmaker(bind=engine)
     session = Session()
     for path in f_paths:
-        with open(path, 'r') as f:
-            publication_data_list = json.load(f)
-        for publication_data in publication_data_list:
-            insert_publication(publication_data, session)
-        shutil.move(path, Path(success_path)/Path(path).name)
+        try:
+            with open(path, 'r') as f:
+                publication_data_list = json.load(f)
+            for publication_data in publication_data_list:
+                insert_publication(publication_data, session)
+            shutil.move(path, Path(success_path)/Path(path).name)
+        except:
+            shutil.move(path, Path(fail_path)/Path(path).name)
+
     session.close()
 
 
-file_sensor_task_norm = FileSensor(
-    task_id='file_sensor_task_norm',
-    filepath=f'{NORM_DATA_FOLDER}/*.json',
-    fs_conn_id='fs_default',
-    poke_interval=5,
-    dag=convert_to_csv,
-)
-
-
-insert_to_db_task = PythonOperator(
-    task_id='insert_to_db_task',
-    dag=convert_to_csv,
+upload_to_staging_db_task = PythonOperator(
+    task_id='upload_to_staging_db_task',
+    dag=upload_to_staging_db,
     trigger_rule='none_failed',
     python_callable=insert_normalized_json,
     op_kwargs={
-        'data_path': NORM_DATA_FOLDER,
-        'success_path': NORM_SUCCESS_FOLDER,
+        'data_path': NORM_JSON_INPUT,
+        'success_path': NORM_JSON_SUCCESS,
+        'fail_path': NORM_JSON_FAIL
     },
 )
 
-file_sensor_task_norm >> insert_to_db_task
+normalize_json_task >> upload_to_staging_db_task

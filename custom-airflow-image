@@ -1,5 +1,9 @@
 # Use an official Python runtime as a parent image
 FROM apache/airflow:2.7.1
-# Install any eeded packages specified in requirements.txt
+# Install any needed packages specified in requirements.txt
 COPY requirements.txt ./requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
+
+COPY alembic.ini /opt/airflow/alembic.ini
+COPY alembic /opt/airflow/alembic
+COPY sqlalchemy_orm /opt/airflow/sqlalchemy_orm

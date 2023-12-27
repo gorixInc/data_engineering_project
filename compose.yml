@@ -54,7 +54,6 @@ x-airflow-common:
   build: 
     context: ./
     dockerfile: custom-airflow-image
-
   environment:
     &airflow-common-env
     AIRFLOW__CORE__EXECUTOR: CeleryExecutor
@@ -65,7 +64,7 @@ x-airflow-common:
     AIRFLOW__CELERY__BROKER_URL: redis://:@redis:6379/0
     AIRFLOW__CORE__FERNET_KEY: ''
     AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: 'true'
-    AIRFLOW__CORE__LOAD_EXAMPLES: 'true'
+    AIRFLOW__CORE__LOAD_EXAMPLES: False
     AIRFLOW__CORE__TEST_CONNECTION: 'Enabled' # Disabled by default, enabled for developing purposes
     AIRFLOW__API__AUTH_BACKENDS: 'airflow.api.auth.backend.basic_auth,airflow.api.auth.backend.session'
     # yamllint disable rule:line-length
@@ -80,9 +79,14 @@ x-airflow-common:
     - ${AIRFLOW_PROJ_DIR:-.}/dags:/opt/airflow/dags
     - ${AIRFLOW_PROJ_DIR:-.}/logs:/opt/airflow/logs
     - ${AIRFLOW_PROJ_DIR:-.}/config:/opt/airflow/config
-    - ${AIRFLOW_PROJ_DIR:-.}/plugins:/opt/airflow/plugins
+    #- ${AIRFLOW_PROJ_DIR:-.}/plugins:/opt/airflow/plugins
     - ${AIRFLOW_PROJ_DIR:-.}/data:/tmp/data
+    - ${AIRFLOW_PROJ_DIR:-.}/sqlalchemy_orm:/opt/airflow/plugins/sqlalchemy_orm
+    - ${AIRFLOW_PROJ_DIR:-.}/alembic:/opt/airflow/alembic
+    - ${AIRFLOW_PROJ_DIR:-.}/alembic.ini:/opt/airflow/alembic.ini
+    - ${AIRFLOW_PROJ_DIR:-.}/.env:/opt/airflow/.env
   user: "${AIRFLOW_UID:-50000}:0"
+
   depends_on:
     &airflow-common-depends-on
     redis:
@@ -134,11 +138,7 @@ services:
       retries: 5
       start_period: 30s
     restart: always
-    # environment:
-    #   - PYTHONPATH=/opt/airflow/sqlalchemy_orm
-    # volumes:
-    #   - ./dags:/usr/local/airflow/dags
-    #   - ./sqlalchemy_orm:/usr/local/airflow/dags/sqlalchemy_orm
+  
     depends_on:
       <<: *airflow-common-depends-on
       airflow-init:
@@ -147,7 +147,7 @@ services:
   airflow-scheduler:
     <<: *airflow-common
     command: scheduler
-    image: my-custom-airflow-image
+    image: custom-airflow-image
     healthcheck:
       test: ["CMD", "curl", "--fail", "http://localhost:8974/health"]
       interval: 30s
@@ -209,7 +209,11 @@ services:
     # yamllint disable rule:line-length
     command:
       - -c
-      - |
+      - | 
+        echo "Running Alembic migrations..."
+        cd /opt/airflow/
+        gosu airflow alembic upgrade head
+        cd -
         function ver() {
           printf "%04d%04d%04d%04d" $${1//./ }
         }
@@ -268,7 +272,13 @@ services:
         fi
         mkdir -p /sources/logs /sources/dags /sources/plugins
         chown -R "${AIRFLOW_UID}:0" /sources/{logs,dags,plugins}
+
+
+
         exec /entrypoint airflow version
+
+
+
     # yamllint enable rule:line-length
     environment:
       <<: *airflow-common-env
