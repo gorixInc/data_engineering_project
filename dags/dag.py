@@ -9,7 +9,7 @@ import os
 import shutil
 from pathlib import Path
 from copy import deepcopy
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, select
 from sqlalchemy.orm import sessionmaker
 from datetime import datetime
 from sqlalchemy_orm.staging import (Person, Submitter, Category, 
@@ -23,6 +23,7 @@ from airflow.operators.bash_operator import BashOperator
 from airflow.operators.dummy_operator import DummyOperator
 from airflow.providers.postgres.operators.postgres import PostgresOperator
 from airflow.contrib.sensors.file_sensor import FileSensor
+from py2neo import Graph, Node, Relationship
 
 DEFAULT_ARGS = {
     'owner': 'Tartu',
@@ -32,6 +33,8 @@ DEFAULT_ARGS = {
 }
 
 DATABASE_URL = "postgresql+psycopg2://airflow:airflow@postgres/main"
+GRAPH_URL = "bolt://neo4j:7687"
+GRAPH_AUTH = ("neo4j", "airflow")
 
 RAW_DATA_INPUT = '/tmp/data/raw_data/input'
 RAW_DATA_SUCCESS = '/tmp/data/raw_data/success'
@@ -292,3 +295,196 @@ upload_to_staging_db_task = PythonOperator(
 )
 
 normalize_json_task >> upload_to_staging_db_task
+
+def create_publication_nodes(session, graph, batch_size):
+    offset = 0
+    while True:
+        sql_query = f"""
+            SELECT id, title, doi, arxiv_id, update_date, comments
+            FROM publication
+            LIMIT {batch_size} OFFSET {offset}
+        """
+
+        results = session.execute(sql_query).fetchall()
+
+        if not results:
+            break
+
+        for publication in results:
+            node = Node('Publication', 
+                            id=publication.id,
+                            title=publication.title,
+                            doi=publication.doi,
+                            arxiv_id = publication.arxiv_id,
+                            update_date = publication.update_date,
+                            comments = publication.comments)                       
+            graph.create(node)
+
+        offset += batch_size
+
+def create_person_nodes(session, graph, batch_size):
+    offset = 0
+    while True:
+        sql_query = f"""
+            SELECT id, first_name, last_name, third_name
+            FROM person
+            LIMIT {batch_size} OFFSET {offset}
+        """
+
+        results = session.execute(sql_query).fetchall()
+
+        if not results:
+            break
+
+        for person in results:
+            node = Node('Person',
+                            id=person.id,
+                            first_name=person.first_name,
+                            last_name=person.last_name,
+                            third_name=person.third_name)
+            graph.create(node)
+
+        offset += batch_size
+
+def create_journal_nodes(session, graph, batch_size):
+    offset = 0
+    while True:
+        sql_query = f"""
+            SELECT id, name, journal_ref
+            FROM journal
+            LIMIT {batch_size} OFFSET {offset}
+        """
+
+        results = session.execute(sql_query).fetchall()
+
+        if not results:
+            break
+
+        for journal in results:
+            node = Node('Journal', 
+                            id=journal.id,
+                            name=journal.name,
+                            journal_ref=journal.journal_ref)
+            graph.create(node)
+
+        offset += batch_size
+
+def create_category_nodes(session, graph, batch_size):
+    offset = 0
+    while True:
+        sql_query = f"""
+            SELECT id, name
+            FROM category
+            LIMIT {batch_size} OFFSET {offset}
+        """
+
+        results = session.execute(sql_query).fetchall()
+
+        if not results:
+            break
+
+        for category in results:
+            node = Node('Category', 
+                            id=category.id,
+                            name=category.name)
+            graph.create(node)
+
+        offset += batch_size
+
+def create_nodes(batch_size):
+    graph = Graph(GRAPH_URL, auth=GRAPH_AUTH)
+
+    engine = create_engine(DATABASE_URL, connect_args={'options': '-csearch_path=staging'})
+    Session = sessionmaker(bind=engine)
+    session = Session()
+
+    create_publication_nodes(session, graph, batch_size)
+    create_person_nodes(session, graph, batch_size)
+    create_journal_nodes(session, graph, batch_size)
+    create_category_nodes(session, graph, batch_size)
+
+    session.close()
+
+create_graph_nodes = PythonOperator(
+    task_id='create_graph_nodes_task',
+    dag=upload_to_staging_db,
+    trigger_rule='none_failed',
+    python_callable=create_nodes,
+    op_kwargs={
+        'batch_size': 100,
+    },
+)
+
+def create_relationships(session, graph, batch_size):
+    offset = 0
+    while True:
+        sql_query = f"""
+            SELECT pub.id AS publication, jou.id AS journal, 
+                   ARRAY_AGG(per.id) AS persons, ARRAY_AGG(cat.id) AS categories 
+            FROM publication pub
+            JOIN authorship aus ON pub.id = aus.publication_id
+            LEFT JOIN person per ON aus.author_id = per.id
+            JOIN journal_specifics jsp ON pub.id = jsp.publication_id
+            LEFT JOIN journal jou ON jsp.journal_id = jou.id
+            JOIN publication_category pct ON pub.id = pct.publication_id
+            LEFT JOIN category cat ON pct.category_id = cat.id
+            GROUP BY pub.id, jou.id
+            ORDER BY publication
+            LIMIT {batch_size} OFFSET {offset}
+        """
+
+        results = session.execute(sql_query).fetchall()
+
+        if not results:
+            break
+
+        for result in results:
+            publication_id, journal_id, person_ids, category_ids = result
+
+            for person_id in set(person_ids):
+                if person_id is not None:
+                    graph.create(Relationship(graph.nodes.match('Person', id=person_id).first(), 
+                                              'WRITTEN_BY', 
+                                              graph.nodes.match('Publication', id=publication_id).first()))
+
+                    for coworker_id in set(person_ids):
+                        if coworker_id is not None and coworker_id != person_id:
+                            graph.create(Relationship(graph.nodes.match('Person', id=person_id).first(), 
+                                                      'COWORKED', 
+                                                      graph.nodes.match('Person', id=coworker_id).first()))
+
+            if journal_id is not None:
+                graph.create(Relationship(graph.nodes.match('Publication', id=publication_id).first(), 
+                                          'PUBLISHED_IN', 
+                                          graph.nodes.match('Journal', id=journal_id).first()))
+
+            for person_id, category_id in zip(person_ids, category_ids):
+                if person_id is not None and category_id is not None:
+                    graph.create(Relationship(graph.nodes.match('Person', id=person_id).first(), 
+                                              'CONTRIBUTES_TO', 
+                                              graph.nodes.match('Category', id=category_id).first()))
+
+        offset += batch_size
+
+def create_edges(batch_size):
+    graph = Graph(GRAPH_URL, auth=GRAPH_AUTH)
+
+    engine = create_engine(DATABASE_URL, connect_args={'options': '-csearch_path=staging'})
+    Session = sessionmaker(bind=engine)
+    session = Session()
+
+    create_relationships(session, graph, batch_size)
+
+    session.close()
+
+create_graph_edges = PythonOperator(
+    task_id='create_graph_edges_task',
+    dag=upload_to_staging_db,
+    trigger_rule='none_failed',
+    python_callable=create_edges,
+    op_kwargs={
+        'batch_size': 100,
+    },
+)
+
+create_graph_nodes >> create_graph_edges
