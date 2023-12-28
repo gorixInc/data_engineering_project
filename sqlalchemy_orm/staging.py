@@ -1,4 +1,4 @@
-from sqlalchemy import create_engine, Column, Integer, Text, Date, ForeignKey
+from sqlalchemy import create_engine, Column, Integer, Text, Date, ForeignKey, DateTime
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
 from sqlalchemy_orm.common_base import Base
@@ -11,6 +11,7 @@ class Journal(Base):
     id = Column(Integer, primary_key=True)
     name = Column(Text)
     journal_ref = Column(Text)
+    processed_at = Column(DateTime)
 
 class Submitter(Base):
     __tablename__ = 'submitter'
@@ -19,6 +20,7 @@ class Submitter(Base):
     first_name = Column(Text)
     last_name = Column(Text)
     third_name = Column(Text)
+    processed_at = Column(DateTime)
 
 class Version(Base):
     __tablename__ = 'version'
@@ -27,6 +29,8 @@ class Version(Base):
     publication_id = Column(Integer, ForeignKey('staging.publication.id'))
     name = Column(Text)
     create_date = Column(Date)
+    processed_at = Column(DateTime)
+
     publication = relationship("sqlalchemy_orm.staging.Publication")
     
 class License(Base):
@@ -34,6 +38,7 @@ class License(Base):
     __table_args__ = {'schema': schema, 'extend_existing': True}
     id = Column(Integer, primary_key=True)
     name = Column(Text)
+    processed_at = Column(DateTime)
 
 class Publication(Base):
     __tablename__ = 'publication'
@@ -46,6 +51,7 @@ class Publication(Base):
     comments = Column(Text)
     submitter_id = Column(Integer, ForeignKey('staging.submitter.id'))
     license_id = Column(Integer, ForeignKey('staging.license.id'))
+    processed_at = Column(DateTime)
 
     submitter = relationship("sqlalchemy_orm.staging.Submitter")
     license = relationship("sqlalchemy_orm.staging.License")
@@ -56,6 +62,7 @@ class JournalSpecifics(Base):
     id = Column(Integer, primary_key=True)
     journal_id = Column(Integer, ForeignKey('staging.journal.id'))
     publication_id = Column(Integer, ForeignKey('staging.publication.id'))
+    processed_at = Column(DateTime)
 
     journal = relationship("sqlalchemy_orm.staging.Journal")
     publication = relationship("sqlalchemy_orm.staging.Publication")
@@ -67,6 +74,7 @@ class Person(Base):
     first_name = Column(Text)
     last_name = Column(Text)
     third_name = Column(Text)
+    processed_at = Column(DateTime)
 
 class Authorship(Base):
     __tablename__ = 'authorship'
@@ -74,6 +82,7 @@ class Authorship(Base):
     id = Column(Integer, primary_key=True)
     author_id = Column(Integer, ForeignKey('staging.person.id'))
     publication_id = Column(Integer, ForeignKey('staging.publication.id'))
+    processed_at = Column(DateTime)
 
     author = relationship("sqlalchemy_orm.staging.Person")
     publication = relationship("sqlalchemy_orm.staging.Publication")
@@ -83,12 +92,14 @@ class SubCategory(Base):
     __table_args__ = {'schema': schema, 'extend_existing': True}
     id = Column(Integer, primary_key=True)
     name = Column(Text)
+    processed_at = Column(DateTime)
 
 class Category(Base):
     __tablename__ = 'category'
     __table_args__ = {'schema': schema, 'extend_existing': True}
     id = Column(Integer, primary_key=True)
     name = Column(Text)
+    processed_at = Column(DateTime)
 
 class PublicationCategory(Base):
     __tablename__ = 'publication_category'
@@ -97,6 +108,7 @@ class PublicationCategory(Base):
     category_id = Column(Integer, ForeignKey('staging.category.id'))
     subcategory_id = Column(Integer, ForeignKey('staging.sub_category.id'))
     publication_id = Column(Integer, ForeignKey('staging.publication.id'))
+    processed_at = Column(DateTime)
 
     category = relationship("sqlalchemy_orm.staging.Category")
     subcategory = relationship("sqlalchemy_orm.staging.SubCategory")

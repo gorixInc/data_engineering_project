@@ -28,8 +28,8 @@ from py2neo import Graph, Node, Relationship
 DEFAULT_ARGS = {
     'owner': 'Tartu',
     'depends_on_past': False,
-    'retries': 1,
-    'retry_delay': timedelta(minutes=5)
+    'retries': 2,
+    'retry_delay': timedelta(minutes=1)
 }
 
 DATABASE_URL = "postgresql+psycopg2://airflow:airflow@postgres/main"
@@ -46,7 +46,7 @@ NORM_JSON_FAIL = '/tmp/data/norm_jsons/fail'
 
 upload_to_staging_db = DAG(
     dag_id='upload_to_staging_db', # name of dag
-    schedule_interval='* * * * *', 
+    schedule_interval='*/30 * * * *', 
     start_date=datetime(2022,9,14,9,15,0),
     catchup=False, # in case execution has been paused, should it execute everything in between
     default_args=DEFAULT_ARGS, # args assigned to all operators
@@ -201,18 +201,18 @@ def insert_publication(publication_data, session):
     category_objs = []
 
     for author in publication_data.pop('norm_authors'):
-        person_obj = Person(**author)
+        person_obj = Person(**author, processed_at=None)
         person_objs.append(person_obj)
         session.add(person_obj)
 
     for category_data in publication_data.pop('norm_categories'):
-        category_obj = Category(name = category_data['category_name'])
+        category_obj = Category(name = category_data['category_name'], processed_at=None)
         category_objs.append(category_obj)
         session.add(category_obj)
         subcategory_name = category_data['subcategory_name']
 
         if subcategory_name is not None and not subcategory_name == '':
-            sub_category_obj = SubCategory(name = subcategory_name)
+            sub_category_obj = SubCategory(name = subcategory_name, processed_at=None)
             sub_category_objs.append(sub_category_obj)
             session.add(sub_category_obj)
         else: 
@@ -222,16 +222,16 @@ def insert_publication(publication_data, session):
     journal_ref = publication_data.pop('journal-ref')
     journal_obj = None
     if journal_ref is not None:
-        journal_obj = Journal(journal_ref=journal_ref)
+        journal_obj = Journal(journal_ref=journal_ref, processed_at=None)
         session.add(journal_obj)
 
     licence_name = publication_data.pop('license')
     license_obj = None
     if licence_name is not None:
-        license_obj = License(name=licence_name)
+        license_obj = License(name=licence_name, processed_at=None)
         session.add(license_obj)
     
-    submitter_obj = Submitter(** publication_data.pop('submitter_norm'))
+    submitter_obj = Submitter(** publication_data.pop('submitter_norm'), processed_at=None)
     session.add(submitter_obj)
 
     
@@ -239,27 +239,29 @@ def insert_publication(publication_data, session):
 
     publication_obj = Publication(**publication_data,
                                   submitter=submitter_obj,
-                                  license=license_obj
+                                  license=license_obj, 
+                                  processed_at=None
                                   )
     session.add(publication_obj)
 
     for version_norm in versions_norm:
         version_obj = Version(name=version_norm['name'], 
                               create_date=datetime.fromisoformat(version_norm['create_date']),
-                              publication=publication_obj)
+                              publication=publication_obj, 
+                              processed_at=None)
         session.add(version_obj)
     
     for person_obj in person_objs:
-        authorship_obj = Authorship(author=person_obj, publication=publication_obj)
+        authorship_obj = Authorship(author=person_obj, publication=publication_obj, processed_at=None)
         session.add(authorship_obj)
 
     for i, category_obj in enumerate(category_objs):
         sub_category_obj = sub_category_objs[i]
         pub_cat_obj = PublicationCategory(publication=publication_obj, category=category_obj, 
-                                          subcategory=sub_category_obj)
+                                          subcategory=sub_category_obj, processed_at=None)
         session.add(pub_cat_obj)
     
-    pub_journ_obj = JournalSpecifics(journal = journal_obj, publication=publication_obj)
+    pub_journ_obj = JournalSpecifics(journal = journal_obj, publication=publication_obj, processed_at=None)
     session.add(pub_journ_obj)  
     session.commit()
 
@@ -296,12 +298,35 @@ upload_to_staging_db_task = PythonOperator(
 
 normalize_json_task >> upload_to_staging_db_task
 
-def create_publication_nodes(session, graph, batch_size):
+def mark_records_as_processed(**kwargs):
+    engine = create_engine(DATABASE_URL, connect_args={'options': '-csearch_path=staging'})
+    Session = sessionmaker(bind=engine)
+    session = Session()
+
+    start_time = datetime.utcnow()
+
+    tables_to_update = [Person, Publication, Journal, Category, SubCategory, License, JournalSpecifics, Authorship, PublicationCategory, Version, Submitter]
+    for table in tables_to_update:
+        session.query(table).filter(table.processed_at.is_(None)).update({"processed_at": start_time})
+    session.commit()
+
+    session.close()
+    kwargs['ti'].xcom_push(key='start_time', value=start_time.isoformat())
+
+begin_population_task = PythonOperator(
+    task_id='begin_population_task',
+    dag=upload_to_staging_db,
+    trigger_rule='none_failed',
+    python_callable=mark_records_as_processed,
+)
+
+def create_publication_nodes(session, graph, batch_size, start_time):
     offset = 0
     while True:
         sql_query = f"""
             SELECT id, title, doi, arxiv_id, update_date, comments
             FROM publication
+            WHERE processed_at = '{start_time}'
             LIMIT {batch_size} OFFSET {offset}
         """
 
@@ -322,12 +347,13 @@ def create_publication_nodes(session, graph, batch_size):
 
         offset += batch_size
 
-def create_person_nodes(session, graph, batch_size):
+def create_person_nodes(session, graph, batch_size, start_time):
     offset = 0
     while True:
         sql_query = f"""
             SELECT id, first_name, last_name, third_name
             FROM person
+            WHERE processed_at = '{start_time}'
             LIMIT {batch_size} OFFSET {offset}
         """
 
@@ -346,12 +372,13 @@ def create_person_nodes(session, graph, batch_size):
 
         offset += batch_size
 
-def create_journal_nodes(session, graph, batch_size):
+def create_journal_nodes(session, graph, batch_size, start_time):
     offset = 0
     while True:
         sql_query = f"""
             SELECT id, name, journal_ref
             FROM journal
+            WHERE processed_at = '{start_time}'
             LIMIT {batch_size} OFFSET {offset}
         """
 
@@ -369,12 +396,13 @@ def create_journal_nodes(session, graph, batch_size):
 
         offset += batch_size
 
-def create_category_nodes(session, graph, batch_size):
+def create_category_nodes(session, graph, batch_size, start_time):
     offset = 0
     while True:
         sql_query = f"""
             SELECT id, name
             FROM category
+            WHERE processed_at = '{start_time}'
             LIMIT {batch_size} OFFSET {offset}
         """
 
@@ -391,17 +419,19 @@ def create_category_nodes(session, graph, batch_size):
 
         offset += batch_size
 
-def create_nodes(batch_size):
+def create_nodes(batch_size, **kwargs):
     graph = Graph(GRAPH_URL, auth=GRAPH_AUTH)
 
     engine = create_engine(DATABASE_URL, connect_args={'options': '-csearch_path=staging'})
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    create_publication_nodes(session, graph, batch_size)
-    create_person_nodes(session, graph, batch_size)
-    create_journal_nodes(session, graph, batch_size)
-    create_category_nodes(session, graph, batch_size)
+    start_time = kwargs['ti'].xcom_pull(task_ids='begin_population_task', key='start_time')
+
+    create_publication_nodes(session, graph, batch_size, start_time)
+    create_person_nodes(session, graph, batch_size, start_time)
+    create_journal_nodes(session, graph, batch_size, start_time)
+    create_category_nodes(session, graph, batch_size, start_time)
 
     session.close()
 
@@ -411,23 +441,24 @@ create_graph_nodes = PythonOperator(
     trigger_rule='none_failed',
     python_callable=create_nodes,
     op_kwargs={
-        'batch_size': 100,
+        'batch_size': 50,
     },
 )
 
-def create_relationships(session, graph, batch_size):
+def create_relationships(session, graph, batch_size, start_time):
     offset = 0
     while True:
         sql_query = f"""
             SELECT pub.id AS publication, jou.id AS journal, 
-                   ARRAY_AGG(per.id) AS persons, ARRAY_AGG(cat.id) AS categories 
+                ARRAY_AGG(per.id) AS persons, ARRAY_AGG(cat.id) AS categories 
             FROM publication pub
             JOIN authorship aus ON pub.id = aus.publication_id
-            LEFT JOIN person per ON aus.author_id = per.id
+            LEFT JOIN person per ON aus.author_id = per.id AND per.processed_at = '{start_time}'
             JOIN journal_specifics jsp ON pub.id = jsp.publication_id
-            LEFT JOIN journal jou ON jsp.journal_id = jou.id
+            LEFT JOIN journal jou ON jsp.journal_id = jou.id AND jou.processed_at = '{start_time}'
             JOIN publication_category pct ON pub.id = pct.publication_id
-            LEFT JOIN category cat ON pct.category_id = cat.id
+            LEFT JOIN category cat ON pct.category_id = cat.id AND cat.processed_at = '{start_time}'
+            WHERE pub.processed_at = '{start_time}'
             GROUP BY pub.id, jou.id
             ORDER BY publication
             LIMIT {batch_size} OFFSET {offset}
@@ -466,14 +497,16 @@ def create_relationships(session, graph, batch_size):
 
         offset += batch_size
 
-def create_edges(batch_size):
+def create_edges(batch_size, **kwargs):
     graph = Graph(GRAPH_URL, auth=GRAPH_AUTH)
 
     engine = create_engine(DATABASE_URL, connect_args={'options': '-csearch_path=staging'})
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    create_relationships(session, graph, batch_size)
+    start_time = kwargs['ti'].xcom_pull(task_ids='begin_population_task', key='start_time')
+
+    create_relationships(session, graph, batch_size, start_time)
 
     session.close()
 
@@ -487,4 +520,37 @@ create_graph_edges = PythonOperator(
     },
 )
 
-create_graph_nodes >> create_graph_edges
+def clean_staging_db(**kwargs):
+    engine = create_engine(DATABASE_URL, connect_args={'options': '-csearch_path=staging'})
+    Session = sessionmaker(bind=engine)
+    session = Session()
+
+    start_time = kwargs['ti'].xcom_pull(task_ids='begin_population_task', key='start_time')
+
+    try:
+        tables_to_clear = [Person, Journal, Category, SubCategory, License, JournalSpecifics, Authorship, PublicationCategory, Version, Submitter, Publication]
+
+        for table in tables_to_clear:
+            session.query(table).filter(table.processed_at == start_time).delete()
+
+        session.commit()
+    except Exception as e:
+        session.rollback()
+        raise e
+    finally:
+        session.close()
+
+clean_staging_db_task = PythonOperator(
+    task_id='clean_staging_db_task',
+    python_callable=clean_staging_db,
+    dag=upload_to_staging_db
+)
+
+populate_dwh_task = DummyOperator(
+    task_id='populate_dwh_task',
+    dag=upload_to_staging_db
+)
+
+begin_population_task >> [create_graph_nodes, populate_dwh_task]
+create_graph_edges.set_upstream(create_graph_nodes)
+[create_graph_edges, populate_dwh_task] >> clean_staging_db_task
