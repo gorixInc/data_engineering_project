@@ -342,8 +342,10 @@ def create_publication_nodes(session, graph, batch_size, start_time):
                             doi=publication.doi,
                             arxiv_id = publication.arxiv_id,
                             update_date = publication.update_date,
-                            comments = publication.comments)                       
-            graph.create(node)
+                            comments = publication.comments)
+            node.__primarylabel__ = 'Publication'
+            node.__primarykey__ = 'id'                   
+            graph.merge(node)
 
         offset += batch_size
 
@@ -368,7 +370,9 @@ def create_person_nodes(session, graph, batch_size, start_time):
                             first_name=person.first_name,
                             last_name=person.last_name,
                             third_name=person.third_name)
-            graph.create(node)
+            node.__primarylabel__ = 'Person'
+            node.__primarykey__ = 'id'
+            graph.merge(node)
 
         offset += batch_size
 
@@ -392,7 +396,9 @@ def create_journal_nodes(session, graph, batch_size, start_time):
                             id=journal.id,
                             name=journal.name,
                             journal_ref=journal.journal_ref)
-            graph.create(node)
+            node.__primarylabel__ = 'Journal'
+            node.__primarykey__ = 'id'
+            graph.merge(node)
 
         offset += batch_size
 
@@ -415,7 +421,9 @@ def create_category_nodes(session, graph, batch_size, start_time):
             node = Node('Category', 
                             id=category.id,
                             name=category.name)
-            graph.create(node)
+            node.__primarylabel__ = 'Category'
+            node.__primarykey__ = 'id'
+            graph.merge(node)
 
         offset += batch_size
 
@@ -444,6 +452,19 @@ create_graph_nodes = PythonOperator(
         'batch_size': 50,
     },
 )
+
+def merge_relationship(graph, node1_label, node1_id, node2_label, node2_id, relationship_type):
+    node1 = graph.nodes.match(node1_label, id=node1_id).first()
+    node2 = graph.nodes.match(node2_label, id=node2_id).first()
+
+    if node1 and node2:
+        node1.__primarylabel__ = node1_label
+        node1.__primarykey__ = 'id'
+        node2.__primarylabel__ = node2_label
+        node2.__primarykey__ = 'id'
+
+        rel = Relationship(node1, relationship_type, node2)
+        graph.merge(rel)
 
 def create_relationships(session, graph, batch_size, start_time):
     offset = 0
@@ -474,26 +495,18 @@ def create_relationships(session, graph, batch_size, start_time):
 
             for person_id in set(person_ids):
                 if person_id is not None:
-                    graph.create(Relationship(graph.nodes.match('Person', id=person_id).first(), 
-                                              'WRITTEN_BY', 
-                                              graph.nodes.match('Publication', id=publication_id).first()))
+                    merge_relationship(graph, 'Person', person_id, 'Publication', publication_id, 'WRITTEN_BY')
 
                     for coworker_id in set(person_ids):
                         if coworker_id is not None and coworker_id != person_id:
-                            graph.create(Relationship(graph.nodes.match('Person', id=person_id).first(), 
-                                                      'COWORKED', 
-                                                      graph.nodes.match('Person', id=coworker_id).first()))
+                            merge_relationship(graph, 'Person', person_id, 'Person', coworker_id, 'COWORKED')
 
             if journal_id is not None:
-                graph.create(Relationship(graph.nodes.match('Publication', id=publication_id).first(), 
-                                          'PUBLISHED_IN', 
-                                          graph.nodes.match('Journal', id=journal_id).first()))
+                merge_relationship(graph, 'Publication', publication_id, 'Journal', journal_id, 'PUBLISHED_IN')
 
             for person_id, category_id in zip(person_ids, category_ids):
                 if person_id is not None and category_id is not None:
-                    graph.create(Relationship(graph.nodes.match('Person', id=person_id).first(), 
-                                              'CONTRIBUTES_TO', 
-                                              graph.nodes.match('Category', id=category_id).first()))
+                    merge_relationship(graph, 'Person', person_id, 'Category', category_id, 'CONTRIBUTES_TO')
 
         offset += batch_size
 
@@ -528,7 +541,7 @@ def clean_staging_db(**kwargs):
     start_time = kwargs['ti'].xcom_pull(task_ids='begin_population_task', key='start_time')
 
     try:
-        tables_to_clear = [Person, Journal, Category, SubCategory, License, JournalSpecifics, Authorship, PublicationCategory, Version, Submitter, Publication]
+        tables_to_clear = [Authorship, JournalSpecifics, PublicationCategory, Version, Publication, Person, Journal, Category, SubCategory, License, Submitter]
 
         for table in tables_to_clear:
             session.query(table).filter(table.processed_at == start_time).delete()
