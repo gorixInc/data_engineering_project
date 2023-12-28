@@ -2,3 +2,4 @@ pandas
 numpy
 glob2
 alembic
+py2neo

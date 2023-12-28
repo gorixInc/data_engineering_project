@@ -3,6 +3,7 @@ data/level1/*
 logs/*
 __pycache__
 postgres_data/*
+neo4j/*
 full_data.csv
 
 data/raw_data/fail/*

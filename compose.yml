@@ -95,6 +95,22 @@ x-airflow-common:
       condition: service_healthy
 
 services:
+  neo4j:
+    container_name: neo4j
+    image: neo4j:3.5
+    environment: 
+      - NEO4J_AUTH=neo4j/airflow
+    volumes:
+      - ./neo4j/conf:/conf
+      - ./neo4j/data:/data
+      - ./neo4j/import:/import
+      - ./neo4j/logs:/logs
+      - ./neo4j/plugins:/plugins
+    restart: always
+    ports:
+      - 7474:7474
+      - 7687:7687
+    
   postgres:
     container_name: postgres
     image: postgres:13
