@@ -15,7 +15,7 @@ from datetime import datetime
 from sql_scripts.sql_generators import append_to_schema, create_deduplication_sql
 from sqlalchemy_orm.staging import (Person, Category, 
                               SubCategory, Journal, Publication, License,
-                              PublicationJournal, Authors   hip, PublicationCategory,
+                              PublicationJournal, Authorship, PublicationCategory,
                               Version)
 
 from airflow import DAG 
