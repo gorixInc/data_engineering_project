@@ -306,7 +306,8 @@ def mark_records_as_processed(**kwargs):
 
     start_time = datetime.utcnow()
 
-    tables_to_update = [Person, Publication, Journal, Category, SubCategory, License, PublicationJournal, Authorship, PublicationCategory, Version, Submitter]
+    tables_to_update = [Person, Publication, Journal, Category, 
+                        SubCategory, License, PublicationJournal, Authorship, PublicationCategory, Version]
     for table in tables_to_update:
         session.query(table).filter(table.processed_at.is_(None)).update({"processed_at": start_time})
     session.commit()
@@ -542,7 +543,8 @@ def clean_staging_db(**kwargs):
     start_time = kwargs['ti'].xcom_pull(task_ids='begin_population_task', key='start_time')
 
     try:
-        tables_to_clear = [Authorship, PublicationJournal, PublicationCategory, Version, Publication, Person, Journal, Category, SubCategory, License, Submitter]
+        tables_to_clear = [Authorship, PublicationJournal, PublicationCategory, Version, 
+                           Publication, Person, Journal, Category, SubCategory, License]
 
         for table in tables_to_clear:
             session.query(table).filter(table.processed_at == start_time).delete()

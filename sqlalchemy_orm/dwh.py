@@ -1,4 +1,5 @@
-from sqlalchemy import create_engine, Column, Integer, Text, Date, ForeignKey, String
+from sqlalchemy import create_engine, Column, Integer, Text, Date, DateTime, ForeignKey, String
+
 from sqlalchemy.orm import relationship
 #from sqlalchemy_orm.common_base import Base
 from sqlalchemy.ext.declarative import declarative_base
@@ -13,6 +14,7 @@ class Journal(DwhBase):
     id = Column(Integer, primary_key=True)
     name = Column(String(256))
     journal_ref = Column(String(256))
+    processed_at = Column(DateTime)
 
 class Version(DwhBase):
     __tablename__ = 'version'
@@ -21,6 +23,8 @@ class Version(DwhBase):
     publication_id = Column(Integer, ForeignKey('dwh.publication.id', ondelete="CASCADE"))
     version_no = Column(Integer)
     create_date = Column(Date)
+    processed_at = Column(DateTime)
+
     publication = relationship("sqlalchemy_orm.dwh.Publication", cascade="all,delete")
     
 class License(DwhBase):
@@ -28,6 +32,7 @@ class License(DwhBase):
     __table_args__ = {'schema': schema, 'extend_existing': True}
     id = Column(Integer, primary_key=True)
     name = Column(String(256))
+    processed_at = Column(DateTime)
 
 class Publication(DwhBase):
     __tablename__ = 'publication'
@@ -40,6 +45,7 @@ class Publication(DwhBase):
     comments = Column(String(1024))
     submitter_id = Column(Integer, ForeignKey('dwh.person.id'))
     license_id = Column(Integer, ForeignKey('dwh.license.id'))
+    processed_at = Column(DateTime)
 
     submitter = relationship("sqlalchemy_orm.dwh.Person")
     license = relationship("sqlalchemy_orm.dwh.License")
@@ -50,6 +56,7 @@ class PublicationJournal(DwhBase):
     id = Column(Integer, primary_key=True)
     journal_id = Column(Integer, ForeignKey('dwh.journal.id'))
     publication_id = Column(Integer, ForeignKey('dwh.publication.id',  ondelete="CASCADE"))
+    processed_at = Column(DateTime)
 
     journal = relationship("sqlalchemy_orm.dwh.Journal")
     publication = relationship("sqlalchemy_orm.dwh.Publication", cascade="all,delete")
@@ -61,6 +68,7 @@ class Person(DwhBase):
     first_name = Column(String(128))
     last_name = Column(String(128))
     third_name = Column(String(128))
+    processed_at = Column(DateTime)
 
 class Authorship(DwhBase):
     __tablename__ = 'authorship'
@@ -68,6 +76,7 @@ class Authorship(DwhBase):
     id = Column(Integer, primary_key=True)
     author_id = Column(Integer, ForeignKey('dwh.person.id'))
     publication_id = Column(Integer, ForeignKey('dwh.publication.id', ondelete="CASCADE"))
+    processed_at = Column(DateTime)
 
     author = relationship("sqlalchemy_orm.dwh.Person")
     publication = relationship("sqlalchemy_orm.dwh.Publication", cascade="all,delete")
@@ -83,6 +92,7 @@ class Category(DwhBase):
     __table_args__ = {'schema': schema, 'extend_existing': True}
     id = Column(Integer, primary_key=True)
     name = Column(String(128))
+    processed_at = Column(DateTime)
 
 class PublicationCategory(DwhBase):
     __tablename__ = 'publication_category'
@@ -91,6 +101,7 @@ class PublicationCategory(DwhBase):
     category_id = Column(Integer, ForeignKey('dwh.category.id'))
     subcategory_id = Column(Integer, ForeignKey('dwh.sub_category.id'))
     publication_id = Column(Integer, ForeignKey('dwh.publication.id',  ondelete="CASCADE"))
+    processed_at = Column(DateTime)
 
     category = relationship("sqlalchemy_orm.dwh.Category")
     subcategory = relationship("sqlalchemy_orm.dwh.SubCategory")
