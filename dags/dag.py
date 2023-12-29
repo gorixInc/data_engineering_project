@@ -12,6 +12,7 @@ from copy import deepcopy
 from sqlalchemy import create_engine, select
 from sqlalchemy.orm import sessionmaker
 from datetime import datetime
+from sql_scripts.sql_generators import append_to_schema, create_deduplication_sql
 from sqlalchemy_orm.staging import (Person, Category, 
                               SubCategory, Journal, Publication, License,
                               PublicationJournal, Authors   hip, PublicationCategory,
@@ -31,6 +32,9 @@ DEFAULT_ARGS = {
     'retries': 2,
     'retry_delay': timedelta(minutes=1)
 }
+
+tables_staging = [Authorship, PublicationJournal, PublicationCategory, Version, 
+                           Publication, Person, Journal, Category, SubCategory, License]
 
 DATABASE_URL = "postgresql+psycopg2://airflow:airflow@postgres/main"
 GRAPH_URL = "bolt://neo4j:7687"
@@ -299,6 +303,74 @@ upload_to_staging_db_task = PythonOperator(
 
 normalize_json_task >> upload_to_staging_db_task
 
+dedupe_publication_sql = """
+    DELETE FROM staging.publication
+    WHERE id NOT IN (
+        SELECT MIN(id)
+        FROM staging.publication
+        GROUP BY title, doi, arxiv_id, update_date
+    );
+"""
+
+dedupe_publication = PostgresOperator(
+    task_id='dedupe_publication',
+    postgres_conn_id='postgres_main',
+    sql=dedupe_publication_sql,
+    dag=upload_to_staging_db,
+)
+
+
+dedupe_person_sql = create_deduplication_sql('staging', 'person', ['first_name', 'last_name', 'third_name'], 'authorship', 'author_id')
+dedupe_person = PostgresOperator(
+    task_id='dedupe_person',
+    postgres_conn_id='postgres_main',
+    sql=dedupe_person_sql,
+    dag=upload_to_staging_db,
+)
+
+dedupe_journal_sql = create_deduplication_sql('staging', 'journal', ['journal_ref'], 'publication_journal', 'journal_id')
+dedupe_journal = PostgresOperator(
+    task_id='dedupe_journal',
+    postgres_conn_id='postgres_main',
+    sql=dedupe_journal_sql,
+    dag=upload_to_staging_db,
+)
+
+dedupe_license_sql = create_deduplication_sql('staging', 'license', ['name'], 'publication', 'license_id')
+dedupe_license = PostgresOperator(
+    task_id='dedupe_license',
+    postgres_conn_id='postgres_main',
+    sql=dedupe_license_sql,
+    dag=upload_to_staging_db,
+)
+
+dedupe_subcategory_sql = create_deduplication_sql('staging', 'sub_category', ['name'], 'publication_category', 'subcategory_id')
+dedupe_subcategory = PostgresOperator(
+    task_id='dedupe_subcategory',
+    postgres_conn_id='postgres_main',
+    sql=dedupe_subcategory_sql,
+    dag=upload_to_staging_db,
+)
+
+dedupe_category_sql = create_deduplication_sql('staging', 'category', ['name'], 'publication_category', 'category_id')
+dedupe_category = PostgresOperator(
+    task_id='dedupe_category',
+    postgres_conn_id='postgres_main',
+    sql=dedupe_category_sql,
+    dag=upload_to_staging_db,
+)
+
+tables = ['journal', 'version', 'license', 'publication', 
+          'publication_journal', 'person', 'authorship',
+          'sub_category', 'category', 'publication_category']
+upload_to_dwh_sql = append_to_schema('staging', 'dwh', tables)
+upload_to_dwh = PostgresOperator(
+    task_id='upload_to_dwh',
+    postgres_conn_id='postgres_main',
+    sql=upload_to_dwh_sql,
+    dag=upload_to_staging_db,
+)
+
 def mark_records_as_processed(**kwargs):
     engine = create_engine(DATABASE_URL, connect_args={'options': '-csearch_path=staging'})
     Session = sessionmaker(bind=engine)
@@ -306,9 +378,7 @@ def mark_records_as_processed(**kwargs):
 
     start_time = datetime.utcnow()
 
-    tables_to_update = [Person, Publication, Journal, Category, 
-                        SubCategory, License, PublicationJournal, Authorship, PublicationCategory, Version]
-    for table in tables_to_update:
+    for table in tables_staging:
         session.query(table).filter(table.processed_at.is_(None)).update({"processed_at": start_time})
     session.commit()
 
@@ -451,7 +521,7 @@ create_graph_nodes = PythonOperator(
     trigger_rule='none_failed',
     python_callable=create_nodes,
     op_kwargs={
-        'batch_size': 50,
+        'batch_size': 100,
     },
 )
 
@@ -477,8 +547,8 @@ def create_relationships(session, graph, batch_size, start_time):
             FROM publication pub
             JOIN authorship aus ON pub.id = aus.publication_id
             LEFT JOIN person per ON aus.author_id = per.id AND per.processed_at = '{start_time}'
-            JOIN journal_specifics jsp ON pub.id = jsp.publication_id
-            LEFT JOIN journal jou ON jsp.journal_id = jou.id AND jou.processed_at = '{start_time}'
+            JOIN publication_journal pjo ON pub.id = pjo.publication_id
+            LEFT JOIN journal jou ON pjo.journal_id = jou.id AND jou.processed_at = '{start_time}'
             JOIN publication_category pct ON pub.id = pct.publication_id
             LEFT JOIN category cat ON pct.category_id = cat.id AND cat.processed_at = '{start_time}'
             WHERE pub.processed_at = '{start_time}'
@@ -543,10 +613,7 @@ def clean_staging_db(**kwargs):
     start_time = kwargs['ti'].xcom_pull(task_ids='begin_population_task', key='start_time')
 
     try:
-        tables_to_clear = [Authorship, PublicationJournal, PublicationCategory, Version, 
-                           Publication, Person, Journal, Category, SubCategory, License]
-
-        for table in tables_to_clear:
+        for table in tables_staging:
             session.query(table).filter(table.processed_at == start_time).delete()
 
         session.commit()
@@ -562,11 +629,6 @@ clean_staging_db_task = PythonOperator(
     dag=upload_to_staging_db
 )
 
-populate_dwh_task = DummyOperator(
-    task_id='populate_dwh_task',
-    dag=upload_to_staging_db
-)
-
-begin_population_task >> [create_graph_nodes, populate_dwh_task]
+dedupe_publication >> [dedupe_journal, dedupe_person, dedupe_category, dedupe_subcategory, dedupe_license] >> begin_population_task >> [create_graph_nodes, upload_to_dwh]
 create_graph_edges.set_upstream(create_graph_nodes)
-[create_graph_edges, populate_dwh_task] >> clean_staging_db_task
+[create_graph_edges, upload_to_dwh] >> clean_staging_db_task
