@@ -3,7 +3,6 @@ import json
 from datetime import datetime, timedelta
 from glob import glob
 import pandas as pd
-import json
 import os
 import shutil
 from pathlib import Path
@@ -38,13 +37,13 @@ DATABASE_URL = "postgresql+psycopg2://airflow:airflow@postgres/main"
 GRAPH_URL = "bolt://neo4j:7687"
 GRAPH_AUTH = ("neo4j", "airflow")
 
-RAW_DATA_INPUT = '/tmp/data/preprocessed_data/input'
-RAW_DATA_SUCCESS = '/tmp/data/preprocessed_data/success'
-RAW_DATA_FAIL = '/tmp/data/preprocessed_data/fail'
+RAW_DATA_INPUT = '/tmp/data/raw_data/input'
+RAW_DATA_SUCCESS = '/tmp/data/raw_data/success'
+RAW_DATA_FAIL = '/tmp/data/raw_data/fail'
 
-NORM_JSON_INPUT = '/tmp/data/norm_jsons/input'
-NORM_JSON_SUCCESS = '/tmp/data/norm_jsons/success'
-NORM_JSON_FAIL = '/tmp/data/norm_jsons/fail'
+NORM_JSON_INPUT = '/tmp/data/preprocessed_data/input'
+NORM_JSON_SUCCESS = '/tmp/data/preprocessed_data/success'
+NORM_JSON_FAIL = '/tmp/data/preprocessed_data/fail'
 
 PROGRESS_FILE_PATH = '/tmp/data/progress.json'
 

@@ -13,9 +13,9 @@ with open(filename, 'r') as f:
     for line in f:
         data.append(line)
         i += 1
-        if i > 10000:
+        if i > 250:
             break
-with open('data_sample_10000.json', 'w') as f:
+with open('data_sample_250.json', 'w') as f:
     for line in data:
         f.write(line)
 
@@ -27,4 +27,6 @@ tables = ['journal', 'version', 'license', 'publication',
           'publication_journal', 'person', 'authorship',
           'sub_category', 'category', 'publication_category']
 print(truncate_tables('dwh', tables))
+# %%
+print(truncate_tables('staging', tables))
 # %%

@@ -53,7 +53,7 @@ def append_to_schema(source, target, tables):
         INSERT INTO {target}.{table}
         SELECT * FROM {source}.{table};
         ALTER TABLE {target}.{table} ENABLE TRIGGER ALL;
-        SELECT setval('{target}.{table}_id_seq', (SELECT MAX(id) FROM {source}.{table}));
+        SELECT setval('{target}.{table}_id_seq', (SELECT MAX(id) + 1 FROM {source}.{table}));
         """
         commands.append(c)
     return "\n".join(commands)
