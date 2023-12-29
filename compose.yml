@@ -83,6 +83,7 @@ x-airflow-common:
     - ${AIRFLOW_PROJ_DIR:-.}/data:/tmp/data
     - ${AIRFLOW_PROJ_DIR:-.}/sqlalchemy_orm:/opt/airflow/plugins/sqlalchemy_orm
     - ${AIRFLOW_PROJ_DIR:-.}/sql_scripts:/opt/airflow/plugins/sql_scripts
+    - ${AIRFLOW_PROJ_DIR:-.}/dag_functions:/opt/airflow/plugins/dag_functions
     - ${AIRFLOW_PROJ_DIR:-.}/alembic:/opt/airflow/alembic
     - ${AIRFLOW_PROJ_DIR:-.}/sqlalchemy_orm:/opt/airflow/sqlalchemy_orm
     - ${AIRFLOW_PROJ_DIR:-.}/alembic.ini:/opt/airflow/alembic.ini
