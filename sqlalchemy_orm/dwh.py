@@ -86,7 +86,8 @@ class SubCategory(DwhBase):
     __table_args__ = {'schema': schema, 'extend_existing': True}
     id = Column(Integer, primary_key=True)
     name = Column(String(128))
-
+    processed_at = Column(DateTime)
+    
 class Category(DwhBase):
     __tablename__ = 'category'
     __table_args__ = {'schema': schema, 'extend_existing': True}

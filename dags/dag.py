@@ -14,7 +14,7 @@ from sqlalchemy.orm import sessionmaker
 from datetime import datetime
 from sqlalchemy_orm.staging import (Person, Category, 
                               SubCategory, Journal, Publication, License,
-                              PublicationJournal, Authorship, PublicationCategory,
+                              PublicationJournal, Authors   hip, PublicationCategory,
                               Version)
 
 from airflow import DAG 
