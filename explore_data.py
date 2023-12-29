@@ -13,9 +13,9 @@ with open(filename, 'r') as f:
     for line in f:
         data.append(line)
         i += 1
-        if i > 10:
+        if i > 100:
             break
-with open('data_sample_10.json', 'w') as f:
+with open('data_sample_1000.json', 'w') as f:
     for line in data:
         f.write(line)
 

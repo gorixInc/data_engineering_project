@@ -39,7 +39,8 @@ dedupe_publication = PostgresOperator(
 )
 
 
-dedupe_person_sql = create_deduplication_sql(schema, 'person', ['first_name', 'last_name', 'third_name'], 'authorship', 'author_id')
+dedupe_person_sql = create_deduplication_sql('staging', 'person', ['first_name', 'last_name', 'third_name'], 
+                                             ['authorship', 'publication'], ['author_id', 'submitter_id'])
 dedupe_person = PostgresOperator(
     task_id='dedupe_person',
     postgres_conn_id='postgres_main',
@@ -47,7 +48,8 @@ dedupe_person = PostgresOperator(
     dag=dag,
 )
 
-dedupe_journal_sql = create_deduplication_sql(schema, 'journal', ['journal_ref'], 'publication_journal', 'journal_id')
+dedupe_journal_sql = create_deduplication_sql('staging', 'journal', ['journal_ref'], 
+                                              ['publication_journal'], ['journal_id'])
 dedupe_journal = PostgresOperator(
     task_id='dedupe_journal',
     postgres_conn_id='postgres_main',
@@ -55,7 +57,7 @@ dedupe_journal = PostgresOperator(
     dag=dag,
 )
 
-dedupe_license_sql = create_deduplication_sql(schema, 'license', ['name'], 'publication', 'license_id')
+dedupe_license_sql = create_deduplication_sql('staging', 'license', ['name'], ['publication'], ['license_id'])
 dedupe_license = PostgresOperator(
     task_id='dedupe_license',
     postgres_conn_id='postgres_main',
@@ -63,7 +65,8 @@ dedupe_license = PostgresOperator(
     dag=dag,
 )
 
-dedupe_subcategory_sql = create_deduplication_sql(schema, 'sub_category', ['name'], 'publication_category', 'subcategory_id')
+dedupe_subcategory_sql = create_deduplication_sql('staging', 'sub_category', ['name'], 
+                                                  ['publication_category'], ['subcategory_id'])
 dedupe_subcategory = PostgresOperator(
     task_id='dedupe_subcategory',
     postgres_conn_id='postgres_main',
@@ -71,7 +74,8 @@ dedupe_subcategory = PostgresOperator(
     dag=dag,
 )
 
-dedupe_category_sql = create_deduplication_sql(schema, 'category', ['name'], 'publication_category', 'category_id')
+dedupe_category_sql = create_deduplication_sql('staging', 'category', ['name'],
+                                                ['publication_category'], ['category_id'])
 dedupe_category = PostgresOperator(
     task_id='dedupe_category',
     postgres_conn_id='postgres_main',
