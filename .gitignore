@@ -13,3 +13,5 @@ data/raw_data/sucess/*
 data/norm_jsons/fail/*
 data/norm_jsons/input/*
 data/norm_jsons/success/*
+
+arxiv-metadata-oai-snapshot.json

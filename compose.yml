@@ -82,9 +82,11 @@ x-airflow-common:
     #- ${AIRFLOW_PROJ_DIR:-.}/plugins:/opt/airflow/plugins
     - ${AIRFLOW_PROJ_DIR:-.}/data:/tmp/data
     - ${AIRFLOW_PROJ_DIR:-.}/sqlalchemy_orm:/opt/airflow/plugins/sqlalchemy_orm
+    - ${AIRFLOW_PROJ_DIR:-.}/sql_scripts:/opt/airflow/plugins/sql_scripts
     - ${AIRFLOW_PROJ_DIR:-.}/alembic:/opt/airflow/alembic
+    - ${AIRFLOW_PROJ_DIR:-.}/sqlalchemy_orm:/opt/airflow/sqlalchemy_orm
     - ${AIRFLOW_PROJ_DIR:-.}/alembic.ini:/opt/airflow/alembic.ini
-    - ${AIRFLOW_PROJ_DIR:-.}/.env:/opt/airflow/.env
+    - ${AIRFLOW_PROJ_DIR:-.}/alembic/versions:/opt/airflow/alembic/versions
   user: "${AIRFLOW_UID:-50000}:0"
 
   depends_on:

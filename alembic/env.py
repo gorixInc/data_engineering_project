@@ -2,9 +2,10 @@ from logging.config import fileConfig
 
 from sqlalchemy import engine_from_config
 from sqlalchemy import pool
-from sqlalchemy_orm.common_base import Base
-from sqlalchemy_orm.staging import *
-from sqlalchemy_orm.dwh import *
+
+from sqlalchemy_orm.dwh import DwhBase
+from sqlalchemy_orm.staging import StagingBase
+#from sqlalchemy_orm.common_base import Base
 
 from alembic import context
 
@@ -21,7 +22,7 @@ if config.config_file_name is not None:
 # for 'autogenerate' support
 # from myapp import mymodel
 # target_metadata = mymodel.Base.metadata
-target_metadata = Base.metadata
+target_metadata = [DwhBase.metadata, StagingBase.metadata]
 
 # other values from the config, defined by the needs of env.py,
 # can be acquired:

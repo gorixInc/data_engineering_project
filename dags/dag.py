@@ -12,9 +12,9 @@ from copy import deepcopy
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from datetime import datetime
-from sqlalchemy_orm.staging import (Person, Submitter, Category, 
+from sqlalchemy_orm.staging import (Person, Category, 
                               SubCategory, Journal, Publication, License,
-                              JournalSpecifics, Authorship, PublicationCategory,
+                              PublicationJournal, Authorship, PublicationCategory,
                               Version)
 
 from airflow import DAG 
@@ -42,7 +42,7 @@ NORM_JSON_SUCCESS = '/tmp/data/norm_jsons/success'
 NORM_JSON_FAIL = '/tmp/data/norm_jsons/fail'
 
 upload_to_staging_db = DAG(
-    dag_id='upload_to_staging_db', # name of dag
+    dag_id='process_raw_and_upload_staging', # name of dag
     schedule_interval='* * * * *', 
     start_date=datetime(2022,9,14,9,15,0),
     catchup=False, # in case execution has been paused, should it execute everything in between
@@ -101,7 +101,7 @@ def normalize_versions(publication_data):
     versions = publication_data['versions']
     versions_norm = []
     for version in versions:
-        version_norm = {'name': version['version'],
+        version_norm = {'version_no': int(version['version'].split('v')[1]),
                         'create_date': datetime.strptime(version['created'], 
                                                          "%a, %d %b %Y %H:%M:%S GMT").isoformat()}
         versions_norm.append(version_norm)
@@ -228,7 +228,7 @@ def insert_publication(publication_data, session):
         license_obj = License(name=licence_name)
         session.add(license_obj)
     
-    submitter_obj = Submitter(** publication_data.pop('submitter_norm'))
+    submitter_obj = Person(** publication_data.pop('submitter_norm'))
     session.add(submitter_obj)
 
     
@@ -241,7 +241,7 @@ def insert_publication(publication_data, session):
     session.add(publication_obj)
 
     for version_norm in versions_norm:
-        version_obj = Version(name=version_norm['name'], 
+        version_obj = Version(version_no=version_norm['version_no'], 
                               create_date=datetime.fromisoformat(version_norm['create_date']),
                               publication=publication_obj)
         session.add(version_obj)
@@ -256,7 +256,7 @@ def insert_publication(publication_data, session):
                                           subcategory=sub_category_obj)
         session.add(pub_cat_obj)
     
-    pub_journ_obj = JournalSpecifics(journal = journal_obj, publication=publication_obj)
+    pub_journ_obj = PublicationJournal(journal = journal_obj, publication=publication_obj)
     session.add(pub_journ_obj)  
     session.commit()
 
@@ -267,14 +267,14 @@ def insert_normalized_json(data_path, success_path, fail_path):
     Session = sessionmaker(bind=engine)
     session = Session()
     for path in f_paths:
-        try:
-            with open(path, 'r') as f:
-                publication_data_list = json.load(f)
-            for publication_data in publication_data_list:
-                insert_publication(publication_data, session)
-            shutil.move(path, Path(success_path)/Path(path).name)
-        except:
-            shutil.move(path, Path(fail_path)/Path(path).name)
+        #try:
+        with open(path, 'r') as f:
+            publication_data_list = json.load(f)
+        for publication_data in publication_data_list:
+            insert_publication(publication_data, session)
+        shutil.move(path, Path(success_path)/Path(path).name)
+        # except:
+        #     shutil.move(path, Path(fail_path)/Path(path).name)
 
     session.close()
 
@@ -292,3 +292,5 @@ upload_to_staging_db_task = PythonOperator(
 )
 
 normalize_json_task >> upload_to_staging_db_task
+
+
