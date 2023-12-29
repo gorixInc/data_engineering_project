@@ -6,6 +6,21 @@ from pathlib import Path
 import shutil
 import uuid
 
+PROGRESS_FILE_PATH = '/tmp/data/progress.json'
+
+def load_progress():
+    try:
+        if os.path.exists(PROGRESS_FILE_PATH):
+            with open(PROGRESS_FILE_PATH, 'r') as file:
+                return json.load(file)
+    except json.JSONDecodeError:
+        return {}
+    return {}
+
+def save_progress(progress):
+    with open(PROGRESS_FILE_PATH, 'w') as file:
+        json.dump(progress, file)
+
 def process_categories(publication_data):
     categories_str = publication_data['categories']
     categories_split = categories_str.split(' ')
@@ -84,9 +99,12 @@ def preprocess_publication(publication_data):
     return data_proc
 
 
-def process_file(path, output_path, failed_lines, norm_datas, n_lines, batch_size):
+def process_file(path, output_path, failed_lines, norm_datas, progress, batch_size, n_batches):
+    n_lines = progress.get(path, 0)
     with open(path, 'rb') as f:
-        for line in f:
+        for line_number, line in enumerate(f):
+            if line_number < n_lines:
+                continue
             try:
                 publication_data = json.loads(line.strip())
             except:
@@ -100,23 +118,27 @@ def process_file(path, output_path, failed_lines, norm_datas, n_lines, batch_siz
                 continue
             
             n_lines += 1
-            if n_lines > batch_size:
+            if n_lines % batch_size == 0:
                 # Not handling exceptions here as it's perferrable to crash as errors here are not related to input data
                 with open(f'{output_path}/{uuid.uuid1()}.json', 'w') as f:
                     json.dump(norm_datas, f, indent=4)
-                n_lines = 0
                 norm_datas = []
-            
-    return n_lines, norm_datas
+                n_batches -= 1
 
-def load_and_preprocess(data_path, output_path, success_path, fail_path, batch_size=100):
+            if n_batches == 0:
+                progress[path] = n_lines
+                save_progress(progress)
+                break
+    return norm_datas
+
+def load_and_preprocess(data_path, output_path, success_path, fail_path, batch_size, n_batches):
     norm_datas = []
-    n_lines = 0
+    progress = load_progress()
+    print(progress)
     for path in glob(data_path):
         failed_lines = []
         try:
-            n_lines, norm_datas = process_file(path, output_path, failed_lines, norm_datas, n_lines, batch_size)
-            shutil.move(path, Path(success_path)/Path(path).name)
+            norm_datas = process_file(path, output_path, failed_lines, norm_datas, progress, batch_size, n_batches)
         except:
             shutil.move(path, Path(fail_path)/Path(path).name)
 
@@ -130,3 +152,4 @@ def load_and_preprocess(data_path, output_path, success_path, fail_path, batch_s
     if len(norm_datas) > 0:
         with open(f'{output_path}/{uuid.uuid1()}.json', 'w') as f:
             json.dump(norm_datas, f, indent=4)
+        shutil.move(path, Path(success_path)/Path(path).name)
