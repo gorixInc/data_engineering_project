@@ -45,6 +45,21 @@ NORM_JSON_INPUT = '/tmp/data/norm_jsons/input'
 NORM_JSON_SUCCESS = '/tmp/data/norm_jsons/success'
 NORM_JSON_FAIL = '/tmp/data/norm_jsons/fail'
 
+PROGRESS_FILE_PATH = '/tmp/data/progress.json'
+
+def load_progress():
+    try:
+        if os.path.exists(PROGRESS_FILE_PATH):
+            with open(PROGRESS_FILE_PATH, 'r') as file:
+                return json.load(file)
+    except json.JSONDecodeError:
+        return {}
+    return {}
+
+def save_progress(progress):
+    with open(PROGRESS_FILE_PATH, 'w') as file:
+        json.dump(progress, file)
+
 upload_to_staging_db = DAG(
     dag_id='full_pipeline', # name of dag
     schedule_interval='*/30 * * * *', 
@@ -64,7 +79,8 @@ preprocess_data_task = PythonOperator(
         'output_path': NORM_JSON_INPUT,
         'success_path': RAW_DATA_SUCCESS,
         'fail_path': RAW_DATA_FAIL,
-        'batch_size': 100
+        'batch_size': 100,
+        'n_batches': 5
     },
 )
 
