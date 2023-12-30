@@ -31,7 +31,7 @@ def process_categories(publication_data):
             category_name = category_str.split('.')[0]
             subcategory_name = category_str.split('.')[1]
         else: 
-            category_name = categories_str
+            category_name = category_str
             subcategory_name = None
         category_data.append({'category_name': category_name,
                               'subcategory_name': subcategory_name})

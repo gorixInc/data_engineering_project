@@ -51,8 +51,7 @@ def append_to_schema(source, target, tables):
         c = f"""
         ALTER TABLE {target}.{table} DISABLE TRIGGER ALL;
         INSERT INTO {target}.{table}
-        SELECT * FROM {source}.{table}
-        WHERE {source}.{table}.processed_at 
+        SELECT * FROM {source}.{table};
         ALTER TABLE {target}.{table} ENABLE TRIGGER ALL;
         """
        # SELECT setval('{target}.{table}_id_seq', (SELECT MAX(id) + 1 FROM {source}.{table}));
