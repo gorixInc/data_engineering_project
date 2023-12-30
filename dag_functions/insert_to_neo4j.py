@@ -2,6 +2,7 @@ from py2neo import Graph, Node, Relationship
 from sqlalchemy import create_engine, select
 from sqlalchemy.orm import sessionmaker
 from datetime import datetime
+from sql_scripts.sql_generators import append_to_schema
 from sqlalchemy_orm.staging import (Person, Category, 
                               SubCategory, Journal, Publication, License,
                               PublicationJournal, Authorship, PublicationCategory,
@@ -9,6 +10,9 @@ from sqlalchemy_orm.staging import (Person, Category,
 
 tables_staging = [Authorship, PublicationJournal, PublicationCategory, Version, 
                            Publication, Person, Journal, Category, SubCategory, License]
+tables = ['journal', 'version', 'license', 'publication', 
+          'publication_journal', 'person', 'authorship',
+          'sub_category', 'category', 'publication_category']
 
 def mark_records_as_processed(DATABASE_URL, **kwargs,):
     engine = create_engine(DATABASE_URL, connect_args={'options': '-csearch_path=staging'})
@@ -16,6 +20,7 @@ def mark_records_as_processed(DATABASE_URL, **kwargs,):
     session = Session()
 
     start_time = datetime.utcnow()
+    upload_to_dwh_sql = append_to_schema('staging', 'dwh', tables, start_time)
 
     for table in tables_staging:
         session.query(table).filter(table.processed_at.is_(None)).update({"processed_at": start_time})
@@ -23,6 +28,7 @@ def mark_records_as_processed(DATABASE_URL, **kwargs,):
 
     session.close()
     kwargs['ti'].xcom_push(key='start_time', value=start_time.isoformat())
+    kwargs['ti'].xcom_push(key='upload_to_dwh_sql', value=upload_to_dwh_sql)
 
 def create_publication_nodes(session, graph, batch_size, start_time):
     offset = 0
@@ -42,13 +48,13 @@ def create_publication_nodes(session, graph, batch_size, start_time):
         for publication in results:
             node = Node('Publication', 
                             id=publication.id,
-                            title=publication.title,
+                            name=publication.title,
                             doi=publication.doi,
                             arxiv_id = publication.arxiv_id,
                             update_date = publication.update_date,
                             comments = publication.comments)
             node.__primarylabel__ = 'Publication'
-            node.__primarykey__ = 'id'                   
+            node.__primarykey__ = 'name'                   
             graph.merge(node)
 
         offset += batch_size
@@ -72,11 +78,12 @@ def create_person_nodes(session, graph, batch_size, start_time):
         for person in results:
             node = Node('Person',
                             id=person.id,
+                            name=f'{person.first_name} {person.last_name} {person.third_name}',
                             first_name=person.first_name,
                             last_name=person.last_name,
                             third_name=person.third_name)
             node.__primarylabel__ = 'Person'
-            node.__primarykey__ = 'id'
+            node.__primarykey__ = 'name'
             graph.merge(node)
 
         offset += batch_size
@@ -99,10 +106,9 @@ def create_journal_nodes(session, graph, batch_size, start_time):
         for journal in results:
             node = Node('Journal', 
                             id=journal.id,
-                            name=journal.name,
-                            journal_ref=journal.journal_ref)
+                            name=journal.journal_ref)
             node.__primarylabel__ = 'Journal'
-            node.__primarykey__ = 'id'
+            node.__primarykey__ = 'name'
             graph.merge(node)
 
         offset += batch_size
@@ -127,7 +133,7 @@ def create_category_nodes(session, graph, batch_size, start_time):
                             id=category.id,
                             name=category.name)
             node.__primarylabel__ = 'Category'
-            node.__primarykey__ = 'id'
+            node.__primarykey__ = 'name'
             graph.merge(node)
 
         offset += batch_size
@@ -149,15 +155,15 @@ def create_nodes(batch_size, DATABASE_URL, GRAPH_URL, GRAPH_AUTH, **kwargs):
     session.close()
 
 
-def merge_relationship(graph, node1_label, node1_id, node2_label, node2_id, relationship_type):
-    node1 = graph.nodes.match(node1_label, id=node1_id).first()
-    node2 = graph.nodes.match(node2_label, id=node2_id).first()
+def merge_relationship(graph, node1_label, node1_name, node2_label, node2_name, relationship_type):
+    node1 = graph.nodes.match(node1_label, name=node1_name).first()
+    node2 = graph.nodes.match(node2_label, name=node2_name).first()
 
     if node1 and node2:
         node1.__primarylabel__ = node1_label
-        node1.__primarykey__ = 'id'
+        node1.__primarykey__ = 'name'
         node2.__primarylabel__ = node2_label
-        node2.__primarykey__ = 'id'
+        node2.__primarykey__ = 'name'
 
         rel = Relationship(node1, relationship_type, node2)
         graph.merge(rel)
@@ -166,8 +172,8 @@ def create_relationships(session, graph, batch_size, start_time):
     offset = 0
     while True:
         sql_query = f"""
-            SELECT pub.id AS publication, jou.id AS journal, 
-                ARRAY_AGG(per.id) AS persons, ARRAY_AGG(cat.id) AS categories 
+            SELECT pub.title AS publication, jou.journal_ref AS journal, 
+                ARRAY_AGG(CONCAT_WS(' ', per.first_name, per.last_name, per.third_name)) AS persons, ARRAY_AGG(cat.name) AS categories 
             FROM publication pub
             JOIN authorship aus ON pub.id = aus.publication_id
             LEFT JOIN person per ON aus.author_id = per.id AND per.processed_at = '{start_time}'
