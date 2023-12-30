@@ -1,3 +1,4 @@
+from sqlalchemy.inspection import inspect
 def create_deduplication_sql(schema, table, unique_columns, fk_tables, fk_columns):
     unique_cols_str = ', '.join(unique_columns)
     temp_column = 'is_duplicate'
@@ -45,14 +46,17 @@ def create_deduplication_sql(schema, table, unique_columns, fk_tables, fk_column
 
     return ''.join([add_column_sql, mark_duplicates_sql, update_fk_sql_full, delete_duplicates_sql, drop_column_sql])
 
-def append_to_schema(source, target, tables, start_time):
+def append_to_schema(source, target, table_classes, start_time, exclude_col='processed_at'):
     commands = []
-    for table in tables:
+    for table_class in table_classes:
+        table_name = table_class.__tablename__
+        column_names = [column.name for column in inspect(table_class).c if not column.name == exclude_col]
         c = f"""
-        ALTER TABLE {target}.{table} DISABLE TRIGGER ALL;
-        INSERT INTO {target}.{table}
-        SELECT * FROM {source}.{table} WHERE processed_at = '{start_time}';
-        ALTER TABLE {target}.{table} ENABLE TRIGGER ALL;
+        ALTER TABLE {target}.{table_name} DISABLE TRIGGER ALL;
+        INSERT INTO {target}.{table_name} ({','.join(column_names)})
+        SELECT {','.join(column_names)} FROM {source}.{table_name} 
+        WHERE processed_at = '{start_time}';
+        ALTER TABLE {target}.{table_name} ENABLE TRIGGER ALL;
         """
        # SELECT setval('{target}.{table}_id_seq', (SELECT MAX(id) + 1 FROM {source}.{table}));
         commands.append(c)

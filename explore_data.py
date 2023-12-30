@@ -19,24 +19,6 @@ with open('data_sample_2000.json', 'w') as f:
     for line in data:
         f.write(line)
 # %%
-with open('data_sample_250.json', 'r') as f:
-       for line in f:
-            data = json.loads(line)
-            categories_str = data['categories']
-            categories_split = categories_str.split(' ')
-            category_data = []
-            for category_str in categories_split:
-                if '.' in category_str:
-                    category_name = category_str.split('.')[0]
-                    subcategory_name = category_str.split('.')[1]
-                else: 
-                    category_name = category_str
-                    subcategory_name = None
-                if ' ' in catego
-                category_data.append({'category_name': category_name,
-                                    'subcategory_name': subcategory_name})
-                
-            print(category_data)
         
 # %%
 print(create_deduplication_sql('staging', 'person', ['first_name', 'last_name', 'third_name'], 

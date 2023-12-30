@@ -20,7 +20,7 @@ def mark_records_as_processed(DATABASE_URL, **kwargs,):
     session = Session()
 
     start_time = datetime.utcnow()
-    upload_to_dwh_sql = append_to_schema('staging', 'dwh', tables, start_time)
+    upload_to_dwh_sql = append_to_schema('staging', 'dwh', tables_staging, start_time)
 
     for table in tables_staging:
         session.query(table).filter(table.processed_at.is_(None)).update({"processed_at": start_time})

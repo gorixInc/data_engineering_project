@@ -1,3 +1,5 @@
+--- Calculate average time between first and last versions per category
+
 SELECT 
     c.name AS Category_Name,
     AVG(v_latest.latest_date - v_earliest.earliest_date) AS Avg_Days_Between_Versions

@@ -1,3 +1,4 @@
+--- Calculate the number of times category - sub category pair apperas on articles between two dates
 SELECT 
     c.name AS Category,
     sc.name AS SubCategory,
