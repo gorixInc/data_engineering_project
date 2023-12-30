@@ -41,4 +41,6 @@
 - Login: `airflow`
 - Password: `airflow`
 
----
+
+**Usage**
+- Put raw data files into data/raw_data/input
