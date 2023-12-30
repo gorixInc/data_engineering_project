@@ -45,14 +45,13 @@ def create_deduplication_sql(schema, table, unique_columns, fk_tables, fk_column
 
     return ''.join([add_column_sql, mark_duplicates_sql, update_fk_sql_full, delete_duplicates_sql, drop_column_sql])
 
-def append_to_schema(source, target, tables):
+def append_to_schema(source, target, tables, start_time):
     commands = []
     for table in tables:
         c = f"""
         ALTER TABLE {target}.{table} DISABLE TRIGGER ALL;
         INSERT INTO {target}.{table}
-        SELECT * FROM {source}.{table}
-        WHERE {source}.{table}.processed_at 
+        SELECT * FROM {source}.{table} WHERE processed_at = '{start_time}';
         ALTER TABLE {target}.{table} ENABLE TRIGGER ALL;
         """
        # SELECT setval('{target}.{table}_id_seq', (SELECT MAX(id) + 1 FROM {source}.{table}));

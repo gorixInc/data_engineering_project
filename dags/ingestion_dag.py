@@ -9,7 +9,7 @@ from pathlib import Path
 from sqlalchemy import create_engine, select
 from sqlalchemy.orm import sessionmaker
 from datetime import datetime
-from sql_scripts.sql_generators import append_to_schema, create_deduplication_sql
+from sql_scripts.sql_generators import create_deduplication_sql
 from sqlalchemy_orm.staging import (Person, Category, 
                               SubCategory, Journal, Publication, License,
                               PublicationJournal, Authorship, PublicationCategory,
@@ -153,15 +153,10 @@ dedupe_category = PostgresOperator(
     dag=upload_to_staging_db,
 )
 
-tables = ['journal', 'version', 'license', 'publication', 
-          'publication_journal', 'person', 'authorship',
-          'sub_category', 'category', 'publication_category']
-
-upload_to_dwh_sql = append_to_schema('staging', 'dwh', tables)
 upload_to_dwh = PostgresOperator(
     task_id='upload_to_dwh',
     postgres_conn_id='postgres_main',
-    sql=upload_to_dwh_sql,
+    sql="{{ ti.xcom_pull(task_ids='begin_population_task', key='upload_to_dwh_sql') }}",
     dag=upload_to_staging_db,
 )
 
