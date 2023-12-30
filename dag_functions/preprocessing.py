@@ -5,6 +5,7 @@ from glob import glob
 from pathlib import Path
 import shutil
 import uuid
+import os
 
 PROGRESS_FILE_PATH = '/tmp/data/progress.json'
 

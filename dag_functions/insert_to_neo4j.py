@@ -2,6 +2,7 @@ from py2neo import Graph, Node, Relationship
 from sqlalchemy import create_engine, select
 from sqlalchemy.orm import sessionmaker
 from datetime import datetime
+from sql_scripts.sql_generators import append_to_schema
 from sqlalchemy_orm.staging import (Person, Category, 
                               SubCategory, Journal, Publication, License,
                               PublicationJournal, Authorship, PublicationCategory,
@@ -9,6 +10,9 @@ from sqlalchemy_orm.staging import (Person, Category,
 
 tables_staging = [Authorship, PublicationJournal, PublicationCategory, Version, 
                            Publication, Person, Journal, Category, SubCategory, License]
+tables = ['journal', 'version', 'license', 'publication', 
+          'publication_journal', 'person', 'authorship',
+          'sub_category', 'category', 'publication_category']
 
 def mark_records_as_processed(DATABASE_URL, **kwargs,):
     engine = create_engine(DATABASE_URL, connect_args={'options': '-csearch_path=staging'})
@@ -16,6 +20,7 @@ def mark_records_as_processed(DATABASE_URL, **kwargs,):
     session = Session()
 
     start_time = datetime.utcnow()
+    upload_to_dwh_sql = append_to_schema('staging', 'dwh', tables, start_time)
 
     for table in tables_staging:
         session.query(table).filter(table.processed_at.is_(None)).update({"processed_at": start_time})
@@ -23,6 +28,7 @@ def mark_records_as_processed(DATABASE_URL, **kwargs,):
 
     session.close()
     kwargs['ti'].xcom_push(key='start_time', value=start_time.isoformat())
+    kwargs['ti'].xcom_push(key='upload_to_dwh_sql', value=upload_to_dwh_sql)
 
 def create_publication_nodes(session, graph, batch_size, start_time):
     offset = 0
