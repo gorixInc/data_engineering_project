@@ -82,19 +82,25 @@ def insert_publication(publication_data, session):
     session.commit()
 
 
-def insert_preprocessed_to_staging(data_path, success_path, fail_path, DATABASE_URL):
+def insert_preprocessed_to_staging(data_path, success_path, processing_path, fail_path, DATABASE_URL):
     f_paths = glob(f'{data_path}/*.json')
+    if len(f_paths) < 1:
+        return False
+    path = f_paths[0]
+    new_path = Path(processing_path)/Path(path).name
+    shutil.move(path, new_path)
+
     engine = create_engine(DATABASE_URL)
     Session = sessionmaker(bind=engine)
     session = Session()
-    for path in f_paths:
-        #try:
-        with open(path, 'r') as f:
+    try:
+        with open(new_path, 'r') as f:
             publication_data_list = json.load(f)
         for publication_data in publication_data_list:
             insert_publication(publication_data, session)
-        shutil.move(path, Path(success_path)/Path(path).name)
-        # except:
-        #     shutil.move(path, Path(fail_path)/Path(path).name)
+        shutil.move(new_path, Path(success_path)/Path(path).name)
+    except:
+        shutil.move(new_path, Path(fail_path)/Path(path).name)
 
     session.close()
+    return True
