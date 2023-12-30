@@ -6,12 +6,12 @@ postgres_data/*
 neo4j/*
 full_data.csv
 
-data/raw_data/fail/*
-data/raw_data/input/*
-data/raw_data/sucess/*
+data/raw_data/fail/*.json
+data/raw_data/input/*.json
+data/raw_data/sucess/*.json
 
-data/norm_jsons/fail/*
-data/norm_jsons/input/*
-data/norm_jsons/success/*
+data/preprocessed_data/fail/*.json
+data/preprocessed_data/input/*.json
+data/preprocessed_data/success/*.json
 
 arxiv-metadata-oai-snapshot.json
