@@ -201,7 +201,8 @@ def clean_staging_db(**kwargs):
 
     try:
         for table in tables_staging:
-            session.query(table).filter(table.processed_at == start_time).delete()
+            count = session.query(table).filter(table.processed_at == start_time).delete(synchronize_session='fetch')
+            print(f"Deleted {count} rows from table {table.__tablename__} where processed_at is {start_time}")
 
         session.commit()
     except Exception as e:
